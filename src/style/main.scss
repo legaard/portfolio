@@ -1,0 +1,48 @@
+$font-stack: Helvetica, sans-serif;
+
+body {
+  font: 100% $font-stack;
+}
+
+header nav {
+  background: red;
+  a.active {
+    color: green;
+  }
+}
+
+footer {
+  background: blue;
+}
+
+main {
+  background: salmon;
+}
+
+.page-enter, .page-appear {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+}
+
+.page-enter.page-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s ease;
+}
+
+.page-appear.page-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s ease;
+}
+
+.page-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.page-leave.page-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 25px, 0);
+  transition: 0.2s ease-in;
+}

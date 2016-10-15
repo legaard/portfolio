@@ -1,9 +1,18 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-export default class NotFound extends React.Component {
-  render () {
-    return (
+import { transitionSettings } from '../settings';
+
+export default () => {
+  return (
+    <ReactCSSTransitionGroup
+      component="section"
+      transitionName={transitionSettings.transitionName}
+      transitionAppear={transitionSettings.transitionAppear}
+      transitionAppearTimeout={transitionSettings.transitionAppearTimeout}
+      transitionLeaveTimeout={transitionSettings.transitionLeaveTimeout}
+      transitionEnterTimeout={transitionSettings.transitionEnterTimeout}>
       <div>Not found!</div>
-    );
-  }
+    </ReactCSSTransitionGroup>
+  );
 }

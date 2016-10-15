@@ -1,3 +1,4 @@
 /node_modules
 /src/app.min.js
+*.log
 .DS_Store
