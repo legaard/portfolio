@@ -3,7 +3,6 @@
     "id": "bravida-android-app",
     "name": "A Smartphone Application for Energy Optimization",
     "client": "Bravida Denmark",
-    "description": "Loremt Ipsum description",
     "images": {
       "cover": "data/img/bravida-app/test.jpeg",
       "process": [],
@@ -21,66 +20,10 @@
       "Planning"
     ],
     "links": {
-      "video": "",
-      "report": "",
-      "git": "",
-      "report": ""
-    }
-  },
-  {
-    "id": "bravida-android-app",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "description": "Loremt Ipsum description",
-    "images": {
-      "cover": "data/img/bravida-app/test.jpeg",
-      "process": [],
-      "misc": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": {
-      "video": "",
-      "report": "",
-      "git": "",
-      "report": ""
-    }
-  },
-  {
-    "id": "bravida-android-app",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "description": "Loremt Ipsum description",
-    "images": {
-      "cover": "data/img/bravida-app/test.jpeg",
-      "process": [],
-      "misc": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": {
-      "video": "",
-      "report": "",
-      "git": "",
-      "report": ""
+      "video": null,
+      "report": null,
+      "git": null,
+      "report": null
     }
   }
 ]

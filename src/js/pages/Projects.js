@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { withRouter } from 'react-router';
-import $ from 'jquery';
+import axios from 'axios';
 
 import NotFound from './NotFound';
 import Project from '../components/Project';
+import ProjectCover from '../components/ProjectCover';
 import { transitionSettings } from '../settings';
 
 export default withRouter(class Projects extends React.Component {
@@ -18,17 +19,23 @@ export default withRouter(class Projects extends React.Component {
 
   componentWillMount() {
     // Fetch project data and set/update state
-    $.get('/data/projects.json', ((data) => {
-      let newState = this.state;
-      newState.projects = data;
-      this.setState(newState);
-    }).bind(this));
+    this.cancelToken = axios.CancelToken.source();
+
+    axios.get('/data/projects.json', {
+      cancelToken: this.cancelToken.token
+    })
+    .then(((response) => {
+      this.setState({ projects: response.data });
+    }).bind(this))
+    .catch((err) => { console.error(err); });
+  }
+
+  componentWillUnmount() {
+    this.cancelToken.cancel('Request cancel by unmount');
   }
 
   updateSearchValue(event) {
-    let newState = this.state;
-    newState.searchValue = event.target.value.substr(0, 15);
-    this.setState(newState);
+    this.setState({ searchValue: event.target.value.substr(0, 15) });
   }
 
   render() {
@@ -45,17 +52,9 @@ export default withRouter(class Projects extends React.Component {
         const isInClient = project.client.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;
         return isInName || isInClient;
       })
-
-      // Create project covers
-      //TODO: Make a stateless component out of this (ProjectCovers – or something like that!)!
-      .map((project, index) => {
-         return (
-           <section key={index} onClick={() => {this.props.router.push('projects/' + project.id)}}>
-             <h3>{project.client}</h3>
-             <div>{project.name}</div>
-             <img src={project.images.cover} alt={project.name}/>
-           </section>
-         );
+      .map((project) => {
+        return <ProjectCover project={project} key={project.id}
+                             onClick={(() => {this.props.router.push('projects/' + project.id)}).bind(this)}/>
       });
 
     } else {
