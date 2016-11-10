@@ -1,22 +1,134 @@
-$font-stack: Helvetica, sans-serif;
+/****** VARIABLES *****/
+// Fonts
+$font-oswald: 'Oswald';
+$font-roboto-slab: 'Roboto Slab';
+$font-stack: $font-oswald, Helvetica, sans-serif;
 
+// Sizes
+$size-header-height: 75px;
+$size-footer-height: 100px;
+$size-font-nav: 120%;
+$size-logo: $size-header-height * 1.75;
+$size-min-content-width: 800px;
+$size-max-content-width: 1440px;
+
+// Colors
+$color-black: #323232;
+$color-white: #f0f0f0;
+$color-action: #969696;
+
+// Transitions
+$transition-links: 0.4s ease;
+
+/****** STYLING ******/
 body {
   font: 100% $font-stack;
+  background-color: $color-white;
+  margin: 0;
 }
 
-header nav {
-  background: red;
+h1 {
+  font-size: 150%;
+  color: $color-black;
+  text-transform: uppercase;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $size-header-height;
+  width: 100%;
+  margin: 0 auto;
+
+  #logo {
+    display: block;
+    float: left;
+    height: $size-logo;
+
+    &:hover {
+      -ms-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      -webkit-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+      transition: 1s ease-in-out;
+    }
+  }
+}
+
+.layout-wrapper {
+  min-width: $size-min-content-width;
+  max-width: $size-max-content-width;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+  height: 100%;
+  text-align: center;
+
+  a {
+    color: $color-black;
+    font-size: 125%;
+    text-decoration: none;
+    height: $size-header-height;
+    width: 110px;
+    display: table-cell;
+    vertical-align: bottom;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-action;
+      transition: $transition-links;
+    }
+  }
+
   a.active {
-    color: green;
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+
+main {
+  min-width: $size-min-content-width;
+  max-width: $size-max-content-width - 200px;
+  margin: ($size-logo + 50px) auto 0 auto;
+}
+
+#loading {
+  margin: 40vh auto;
+  width: 110px;
+  height: 110px;
+  svg {
+    height: 110px;
+    width: 110px;
   }
 }
 
 footer {
-  background: blue;
-}
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 
-main {
-  background: salmon;
+  #social-media {
+    text-align: center;
+    width: 45px;
+    background: $color-black;
+    margin-right: 0 auto;
+    display: inline-block;
+    float: right;
+
+    i {
+      color: $color-white;
+      margin: 3.5px 0;
+
+      &:hover {
+        color: $color-action;
+        transition: $transition-links;
+      }
+    }
+  }
 }
 
 .page-enter, .page-appear {

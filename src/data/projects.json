@@ -3,10 +3,13 @@
     "id": "bravida-android-app",
     "name": "A Smartphone Application for Energy Optimization",
     "client": "Bravida Denmark",
+    "year": 2016,
+    "contributors": [
+      "Christian Lorentzen"
+    ],
     "images": {
       "cover": "data/img/bravida-app/test.jpeg",
-      "process": [],
-      "misc": []
+      "process": []
     },
     "technologies": [
       "Android",
@@ -19,11 +22,15 @@
       "Programming",
       "Planning"
     ],
-    "links": {
-      "video": null,
-      "report": null,
-      "git": null,
-      "report": null
-    }
+    "links": [
+      {
+        "name": "git",
+        "url": "http://www.google.dk"
+      },
+      {
+        "name": "YouTube",
+        "url": "http://www.youtube.com"
+      }
+    ]
   }
 ]
