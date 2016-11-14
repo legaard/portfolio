@@ -6,6 +6,7 @@ export default class Footer extends React.Component {
       <footer>
         <div className="layout-wrapper">
           <div id="social-media">
+            <i className="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
             <a href="https://linkedin.com/in/lasselegaard" target="_blank">
               <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
             </a>

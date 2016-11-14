@@ -20,6 +20,15 @@ $color-action: #969696;
 // Transitions
 $transition-links: 0.4s ease;
 
+// Mixins
+@mixin social-media-move-by($y-length) {
+  -ms-transform: translateY($y-length);
+  -webkit-transform: translateY($y-length);
+  -moz-transform: translateY($y-length);
+  transform: translateY($y-length);
+  transition: 0.4s ease;
+}
+
 /****** STYLING ******/
 body {
   font: 100% $font-stack;
@@ -45,14 +54,6 @@ header {
     display: block;
     float: left;
     height: $size-logo;
-
-    &:hover {
-      -ms-transform: rotateZ(360deg);
-      -moz-transform: rotateZ(360deg);
-      -webkit-transform: rotateZ(360deg);
-      transform: rotateZ(360deg);
-      transition: 1s ease-in-out;
-    }
   }
 }
 
@@ -99,6 +100,7 @@ main {
   margin: 40vh auto;
   width: 110px;
   height: 110px;
+
   svg {
     height: 110px;
     width: 110px;
@@ -115,9 +117,21 @@ footer {
     text-align: center;
     width: 45px;
     background: $color-black;
-    margin-right: 0 auto;
     display: inline-block;
     float: right;
+    @include social-media-move-by(190px);
+
+    &:hover {
+      @include social-media-move-by(0);
+
+      .fa-chevron-up {
+        color: $color-white;
+        -ms-transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+        -moz-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+    }
 
     i {
       color: $color-white;
