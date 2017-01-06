@@ -20,7 +20,7 @@ $color-action: #969696;
 // Transitions
 $transition-links: 0.4s ease;
 
-// Mixins
+/****** MIXINS ******/
 @mixin social-media-move-by($y-length) {
   -ms-transform: translateY($y-length);
   -webkit-transform: translateY($y-length);
@@ -29,8 +29,19 @@ $transition-links: 0.4s ease;
   transition: 0.4s ease;
 }
 
+@mixin page-render-as($y-length, $opacity) {
+  opacity: $opacity;
+  -ms-transform: translateY($y-length);
+  -webkit-transform: translateY($y-length);
+  -moz-transform: translateY($y-length);
+  transform: translateY($y-length);
+}
+
 /****** STYLING ******/
 body {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   font: 100% $font-stack;
   background-color: $color-white;
   margin: 0;
@@ -93,7 +104,8 @@ nav {
 main {
   min-width: $size-min-content-width;
   max-width: $size-max-content-width - 200px;
-  margin: ($size-logo + 50px) auto 0 auto;
+  margin: $size-logo + 50px auto 0 auto;
+  padding: 0 10px;
 }
 
 #loading {
@@ -124,7 +136,7 @@ footer {
     &:hover {
       @include social-media-move-by(0);
 
-      .fa-chevron-up {
+      .fa-caret-up {
         color: $color-white;
         -ms-transform: rotateZ(180deg);
         -webkit-transform: rotateZ(180deg);
@@ -146,29 +158,24 @@ footer {
 }
 
 .page-enter, .page-appear {
-  opacity: 0;
-  transform: translate3d(0, 50px, 0);
+  @include page-render-as(50px, 0);
 }
 
 .page-enter.page-enter-active {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+  @include page-render-as(0, 1);
   transition: 0.4s ease;
 }
 
 .page-appear.page-appear-active {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+  @include page-render-as(0, 1);
   transition: 0.4s ease;
 }
 
 .page-leave {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+  @include page-render-as(0, 1);
 }
 
 .page-leave.page-leave-active {
-  opacity: 0;
-  transform: translate3d(0, 25px, 0);
+  @include page-render-as(25px, 0);
   transition: 0.2s ease-in;
 }
