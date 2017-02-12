@@ -7,34 +7,41 @@ $font-stack: $font-oswald, Helvetica, sans-serif;
 // Sizes
 $size-header-height: 75px;
 $size-footer-height: 100px;
-$size-font-nav: 120%;
 $size-logo: $size-header-height * 1.75;
-$size-min-content-width: 800px;
-$size-max-content-width: 1440px;
+$size-max-content-width: 1024px;
 
 // Colors
 $color-black: #323232;
 $color-white: #f0f0f0;
 $color-action: #969696;
 
-// Transitions
-$transition-links: 0.4s ease;
+// Media
+$break-small: 640px;
 
 /****** MIXINS ******/
 @mixin social-media-move-by($y-length) {
-  -ms-transform: translateY($y-length);
   -webkit-transform: translateY($y-length);
   -moz-transform: translateY($y-length);
+  -ms-transform: translateY($y-length);
+  -o-transform: translateY($y-length);
   transform: translateY($y-length);
   transition: 0.4s ease;
 }
 
 @mixin page-render-as($y-length, $opacity) {
-  opacity: $opacity;
-  -ms-transform: translateY($y-length);
   -webkit-transform: translateY($y-length);
   -moz-transform: translateY($y-length);
+  -ms-transform: translateY($y-length);
+  -o-transform: translateY($y-length);
   transform: translateY($y-length);
+  opacity: $opacity;
+}
+
+@mixin transition($length, $what, $how) {
+  -webkit-transition: $what $length $how;
+  -moz-transition: $what $length $how;
+  -o-transition: $what $length $how;
+  transition: $what $length $how;
 }
 
 /****** STYLING ******/
@@ -60,16 +67,20 @@ header {
   height: $size-header-height;
   width: 100%;
   margin: 0 auto;
+  z-index: 1;
 
   #logo {
     display: block;
     float: left;
     height: $size-logo;
   }
+
+  .fa {
+    display: none;
+  }
 }
 
 .layout-wrapper {
-  min-width: $size-min-content-width;
   max-width: $size-max-content-width;
   margin: 0 auto;
 }
@@ -89,21 +100,20 @@ nav {
     vertical-align: bottom;
     text-transform: uppercase;
 
+    &.active {
+      background-color: $color-black;
+      color: $color-white;
+    }
+
     &:hover {
       color: $color-action;
-      transition: $transition-links;
+      @include transition(0.4s, all, ease);
     }
-  }
-
-  a.active {
-    background-color: $color-black;
-    color: $color-white;
   }
 }
 
 main {
-  min-width: $size-min-content-width;
-  max-width: $size-max-content-width - 200px;
+  max-width: $size-max-content-width - 20px;
   margin: $size-logo + 50px auto 0 auto;
   padding: 0 10px;
 }
@@ -129,15 +139,16 @@ footer {
     text-align: center;
     width: 45px;
     background: $color-black;
-    display: inline-block;
     float: right;
-    @include social-media-move-by(190px);
 
-    &:hover {
+    &.hide {
+      @include social-media-move-by(190px);
+    }
+
+    &.show {
       @include social-media-move-by(0);
 
       .fa-caret-up {
-        color: $color-white;
         -ms-transform: rotateZ(180deg);
         -webkit-transform: rotateZ(180deg);
         -moz-transform: rotateZ(180deg);
@@ -145,13 +156,14 @@ footer {
       }
     }
 
-    i {
+    .fa {
       color: $color-white;
       margin: 3.5px 0;
 
       &:hover {
+        @include transition(0.4s, all, ease);
         color: $color-action;
-        transition: $transition-links;
+        cursor: pointer;
       }
     }
   }
@@ -178,4 +190,81 @@ footer {
 .page-leave.page-leave-active {
   @include page-render-as(25px, 0);
   transition: 0.2s ease-in;
+}
+
+/****** MEDIA QUERIES ******/
+@media screen and (max-width: $break-small) {
+  $header-margin: 10px;
+  $size-logo-small: $size-header-height * 1.1;
+  $size-menu-item: 50px;
+  $size-min-content-width: 320px;
+
+  main {
+    min-width: $size-min-content-width;
+    margin: $size-logo-small + 20px auto 0 auto;
+  }
+
+  header {
+    background: $color-black;
+    height: $size-logo-small;
+
+    #logo {
+      margin-left: $header-margin;
+      background: $color-white;
+      height: $size-logo-small;
+    }
+
+    .fa {
+      @include transition(0.4s, all, ease);
+      font-size: 175%;
+      line-height: $size-logo-small;
+      margin-right: $header-margin;
+      display: block;
+      cursor: pointer;
+      color: $color-white;
+      float: right;
+      height: 100%;
+
+      &:hover {
+        color: $color-action;
+      }
+    }
+  }
+
+  .layout-wrapper {
+    min-width: $size-min-content-width;
+  }
+
+  nav {
+    width: 100%;
+    background: $color-black;
+    transition: opacity 0.4s;
+
+    &.hide {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &.show {
+      opacity: 1;
+      height: $size-menu-item * 3;
+      overflow: visible;
+    }
+
+    a {
+      font-size: 120%;
+      height: $size-menu-item;
+      line-height: $size-menu-item;
+      display: block;
+      width: inherit;
+      color: $color-white;
+
+      &.active {
+        background: $color-action;
+        color: $color-black;
+      }
+    }
+  }
+
 }

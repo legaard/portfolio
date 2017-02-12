@@ -1,12 +1,20 @@
 import React from 'react';
 
 export default class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    }
+  }
+
   render() {
     return (
       <footer>
         <div className="layout-wrapper">
-          <div id="social-media">
-            <i className="fa fa-caret-up fa-2x" aria-hidden="true"></i>
+          <div className={this.state.show ? 'show' : 'hide'} id="social-media">
+            <i onClick={ (() => { this.setState({show: !this.state.show}); }).bind(this) }
+              className="fa fa-caret-up fa-2x" aria-hidden="true"></i>
             <a href="https://linkedin.com/in/lasselegaard" target="_blank">
               <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
             </a>
