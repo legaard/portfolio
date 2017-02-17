@@ -1,4 +1,10 @@
-/****** VARIABLES *****/
+// External Sass files
+@import '../../node_modules/bootstrap/scss/bootstrap-grid';
+
+// Internal Sass files
+@import 'normalize';
+@import 'page-render';
+
 // Fonts
 $font-oswald: 'Oswald';
 $font-roboto-slab: 'Roboto Slab';
@@ -15,46 +21,21 @@ $color-black: #323232;
 $color-white: #f0f0f0;
 $color-action: #969696;
 
-// Media
-$break-small: 640px;
-
-/****** MIXINS ******/
-@mixin social-media-move-by($y-length) {
-  -webkit-transform: translateY($y-length);
-  -moz-transform: translateY($y-length);
-  -ms-transform: translateY($y-length);
-  -o-transform: translateY($y-length);
-  transform: translateY($y-length);
-  transition: 0.4s ease;
-}
-
-@mixin page-render-as($y-length, $opacity) {
-  -webkit-transform: translateY($y-length);
-  -moz-transform: translateY($y-length);
-  -ms-transform: translateY($y-length);
-  -o-transform: translateY($y-length);
-  transform: translateY($y-length);
-  opacity: $opacity;
-}
-
-@mixin transition($length, $what, $how) {
-  -webkit-transition: $what $length $how;
-  -moz-transition: $what $length $how;
-  -o-transition: $what $length $how;
-  transition: $what $length $how;
-}
-
 /****** STYLING ******/
 body {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  @include box-size;
   font: 100% $font-stack;
   background-color: $color-white;
   margin: 0;
 }
 
 h1 {
+  font-size: 150%;
+  color: $color-black;
+  text-transform: uppercase;
+}
+
+h2 {
   font-size: 150%;
   color: $color-black;
   text-transform: uppercase;
@@ -107,7 +88,7 @@ nav {
 
     &:hover {
       color: $color-action;
-      @include transition(0.4s, all, ease);
+      @include transition(color, 0.4s, ease);
     }
   }
 }
@@ -142,11 +123,13 @@ footer {
     float: right;
 
     &.hide {
-      @include social-media-move-by(190px);
+      @include translate(0, 190px);
+      @include transition(all, 0.4s, ease);
     }
 
     &.show {
-      @include social-media-move-by(0);
+      @include translate(0, 0);
+      @include transition(all, 0.4s, ease);
 
       .fa-caret-up {
         -ms-transform: rotateZ(180deg);
@@ -161,7 +144,7 @@ footer {
       margin: 3.5px 0;
 
       &:hover {
-        @include transition(0.4s, all, ease);
+        @include transition(all, 0.4s, ease);
         color: $color-action;
         cursor: pointer;
       }
@@ -169,102 +152,4 @@ footer {
   }
 }
 
-.page-enter, .page-appear {
-  @include page-render-as(50px, 0);
-}
-
-.page-enter.page-enter-active {
-  @include page-render-as(0, 1);
-  transition: 0.4s ease;
-}
-
-.page-appear.page-appear-active {
-  @include page-render-as(0, 1);
-  transition: 0.4s ease;
-}
-
-.page-leave {
-  @include page-render-as(0, 1);
-}
-
-.page-leave.page-leave-active {
-  @include page-render-as(25px, 0);
-  transition: 0.2s ease-in;
-}
-
-/****** MEDIA QUERIES ******/
-@media screen and (max-width: $break-small) {
-  $header-margin: 10px;
-  $size-logo-small: $size-header-height * 1.1;
-  $size-menu-item: 50px;
-  $size-min-content-width: 320px;
-
-  main {
-    min-width: $size-min-content-width;
-    margin: $size-logo-small + 20px auto 0 auto;
-  }
-
-  header {
-    background: $color-black;
-    height: $size-logo-small;
-
-    #logo {
-      margin-left: $header-margin;
-      background: $color-white;
-      height: $size-logo-small;
-    }
-
-    .fa {
-      @include transition(0.4s, all, ease);
-      font-size: 175%;
-      line-height: $size-logo-small;
-      margin-right: $header-margin;
-      display: block;
-      cursor: pointer;
-      color: $color-white;
-      float: right;
-      height: 100%;
-
-      &:hover {
-        color: $color-action;
-      }
-    }
-  }
-
-  .layout-wrapper {
-    min-width: $size-min-content-width;
-  }
-
-  nav {
-    width: 100%;
-    background: $color-black;
-    transition: opacity 0.4s;
-
-    &.hide {
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-    }
-
-    &.show {
-      opacity: 1;
-      height: $size-menu-item * 3;
-      overflow: visible;
-    }
-
-    a {
-      font-size: 120%;
-      height: $size-menu-item;
-      line-height: $size-menu-item;
-      display: block;
-      width: inherit;
-      color: $color-white;
-
-      &.active {
-        background: $color-action;
-        color: $color-black;
-      }
-    }
-  }
-
-}
+@import 'mobile';

@@ -1,0 +1,27 @@
+@mixin page-render($y-length, $opacity) {
+  @include translate(0, $y-length);
+  opacity: $opacity;
+}
+
+.page-enter, .page-appear {
+  @include page-render(50px, 0);
+}
+
+.page-enter.page-enter-active {
+  @include page-render(0, 1);
+  transition: 0.4s ease;
+}
+
+.page-appear.page-appear-active {
+  @include page-render(0, 1);
+  transition: 0.4s ease;
+}
+
+.page-leave {
+  @include page-render(0, 1);
+}
+
+.page-leave.page-leave-active {
+  @include page-render(25px, 0);
+  transition: 0.2s ease-in;
+}

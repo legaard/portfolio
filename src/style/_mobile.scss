@@ -1,0 +1,74 @@
+$break-small: 575px;
+$header-margin: 10px;
+$size-logo-small: $size-header-height * 1.1;
+$size-menu-item: 50px;
+$size-min-content-width: 320px;
+
+@media screen and (max-width: $break-small) {
+  main {
+    min-width: $size-min-content-width;
+    margin: $size-logo-small + 20px auto 0 auto;
+  }
+
+  header {
+    background: $color-black;
+    height: $size-logo-small;
+
+    #logo {
+      margin-left: $header-margin;
+      background: $color-white;
+      height: $size-logo-small;
+    }
+
+    .fa {
+      @include transition(0.4s, all, ease);
+      font-size: 175%;
+      line-height: $size-logo-small;
+      margin-right: $header-margin;
+      display: block;
+      cursor: pointer;
+      color: $color-white;
+      float: right;
+      height: 100%;
+
+      &:hover {
+        color: $color-action;
+      }
+    }
+  }
+
+  .layout-wrapper {
+    min-width: $size-min-content-width;
+  }
+
+  nav {
+    width: 100%;
+    background: $color-black;
+    transition: 0.4s;
+
+    &.hide {
+      height: 0;
+      overflow: hidden;
+    }
+
+    &.show {
+      height: $size-menu-item * 3;
+      overflow: visible;
+    }
+
+    a {
+      font-size: 110%;
+      height: $size-menu-item;
+      line-height: $size-menu-item;
+      display: block;
+      width: inherit;
+      color: $color-white;
+
+      &.active {
+        background: $color-action;
+        color: $color-black;
+      }
+    }
+  }
+
+}
