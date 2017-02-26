@@ -2,19 +2,23 @@
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
 
 // Internal Sass files
-@import 'normalize';
 @import 'page-render';
 
 // Fonts
 $font-oswald: 'Oswald';
 $font-roboto-slab: 'Roboto Slab';
-$font-stack: $font-oswald, Helvetica, sans-serif;
+$font-stack: $font-roboto-slab, Helvetica, sans-serif;
 
 // Sizes
 $size-header-height: 75px;
 $size-footer-height: 100px;
 $size-logo: $size-header-height * 1.75;
-$size-max-content-width: 1024px;
+
+// Z-indexs
+$z-index-highest: 3;
+$z-index-high: 2;
+$z-index-middle: 0;
+$z-index-low: -1;
 
 // Colors
 $color-black: #323232;
@@ -23,20 +27,22 @@ $color-action: #969696;
 
 /****** STYLING ******/
 body {
-  @include box-size;
-  font: 100% $font-stack;
+  box-sizing: border-box;
+  font: 1em $font-stack;
   background-color: $color-white;
   margin: 0;
 }
 
 h1 {
-  font-size: 150%;
+  font-weight: normal;
+  font: 1.6em $font-oswald;
   color: $color-black;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 150%;
+  font-weight: normal;
+  font: 1.3em $font-oswald;
   color: $color-black;
   text-transform: uppercase;
 }
@@ -48,7 +54,7 @@ header {
   height: $size-header-height;
   width: 100%;
   margin: 0 auto;
-  z-index: 1;
+  z-index: $z-index-highest;
 
   #logo {
     display: block;
@@ -61,11 +67,6 @@ header {
   }
 }
 
-.layout-wrapper {
-  max-width: $size-max-content-width;
-  margin: 0 auto;
-}
-
 nav {
   float: right;
   height: 100%;
@@ -73,30 +74,78 @@ nav {
 
   a {
     color: $color-black;
-    font-size: 125%;
+    font: 1.25em $font-oswald;
     text-decoration: none;
     height: $size-header-height;
     width: 110px;
     display: table-cell;
+    outline: none;
     vertical-align: bottom;
     text-transform: uppercase;
 
     &.active {
       background-color: $color-black;
       color: $color-white;
+
+      &:hover {
+        color: $color-white;
+      }
     }
 
     &:hover {
+      transition: all 0.4s ease;
       color: $color-action;
-      @include transition(color, 0.4s, ease);
     }
   }
 }
 
 main {
-  max-width: $size-max-content-width - 20px;
   margin: $size-logo + 50px auto 0 auto;
-  padding: 0 10px;
+
+  ::-moz-selection {
+    color: $color-white;
+    background-color: $color-black;
+  }
+  ::selection {
+    color: $color-white;
+    background-color: $color-black;
+  }
+}
+
+.project-cover {
+  position: relative;
+  height: 225px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &:hover .image-container img {
+    filter: grayscale(0);
+    transform: scale(1.025);
+    transition: all 0.2s ease;
+  }
+
+  .image-container {
+    width: 100%;
+    height: inherit;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      filter: grayscale(100%);
+      transition: all 0.4s ease;
+    }
+  }
+
+  .project-name {
+    padding: 5px;
+    width: 100%;
+    background: $color-black;
+    color: $color-white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-high;
+  }
 }
 
 #loading {
@@ -115,27 +164,27 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 0;
+  z-index: $z-index-highest;
 
   #social-media {
     text-align: center;
     width: 45px;
+    height: 235px;
     background: $color-black;
     float: right;
 
     &.hide {
-      @include translate(0, 190px);
-      @include transition(all, 0.4s, ease);
+      transform: translate(0, -45px);
+      transition: all 0.4s ease;
     }
 
     &.show {
-      @include translate(0, 0);
-      @include transition(all, 0.4s, ease);
+      transform: translate(0, -235px);
+      transition: all 0.4s ease;
 
       .fa-caret-up {
-        -ms-transform: rotateZ(180deg);
-        -webkit-transform: rotateZ(180deg);
-        -moz-transform: rotateZ(180deg);
-        transform: rotateZ(180deg);
+        transform: rotate(180deg);
       }
     }
 
@@ -144,7 +193,7 @@ footer {
       margin: 3.5px 0;
 
       &:hover {
-        @include transition(all, 0.4s, ease);
+        transition: all 0.4s ease;
         color: $color-action;
         cursor: pointer;
       }

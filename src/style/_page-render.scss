@@ -1,5 +1,5 @@
 @mixin page-render($y-length, $opacity) {
-  @include translate(0, $y-length);
+  transform: translate(0, $y-length);
   opacity: $opacity;
 }
 

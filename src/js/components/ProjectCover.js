@@ -2,11 +2,14 @@ import React, { PropTypes } from 'react';
 
 let ProjectCover = (props) => {
   return (
-    <section className="project-cover" onClick={props.onClick}>
-      <h3>{props.project.client}</h3>
-      <div>{props.project.name}</div>
-      <img src={props.project.images.cover}/>
-    </section>
+    <div className="col-md-6 col-lg-4 col-xl-3">
+      <div className="project-cover" onClick={props.onClick}>
+        <div className="project-name">{props.project.name}</div>
+        <div className="image-container">
+          <img src={props.project.images.cover} />
+        </div>
+      </div>
+    </div>
   );
 };
 

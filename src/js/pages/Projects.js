@@ -54,10 +54,13 @@ export default withRouter(class Projects extends React.Component {
 
     return (
       <PageTransitionGroup component="div">
+        <h1>All projects</h1>
         <input type="search" placeholder="Search for project"
                value={this.state.searchValue}
                onChange={this.updateSearchValue.bind(this)}/>
-             {projects}
+               <div className="row">
+                 {projects}
+               </div>
       </PageTransitionGroup>
     );
   }

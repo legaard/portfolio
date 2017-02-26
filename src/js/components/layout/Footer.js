@@ -11,7 +11,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer>
-        <div className="layout-wrapper">
+        <div className="container">
           <div className={this.state.show ? 'show' : 'hide'} id="social-media">
             <i onClick={ (() => { this.setState({show: !this.state.show}); }).bind(this) }
               className="fa fa-caret-up fa-2x" aria-hidden="true"></i>

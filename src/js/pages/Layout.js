@@ -18,14 +18,14 @@ export default class Layout extends React.Component {
       this.setState({
         isLoading: false
       });
-    }, 2750);
+    }, 0);
   }
 
   render () {
     return (
       <div>
         <Header />
-        <main>
+        <main className="container">
           {this.state.isLoading ? <div id="loading"><Loading type="cylon" color="#323232" /></div> : this.props.children}
         </main>
         <Footer />
