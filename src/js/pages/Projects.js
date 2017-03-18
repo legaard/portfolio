@@ -5,6 +5,7 @@ import axios from 'axios';
 import NotFound from './NotFound';
 import ProjectCover from '../components/ProjectCover';
 import PageTransitionGroup from '../components/PageTransitionGroup';
+import SearchField from '../components/SearchField';
 
 export default withRouter(class Projects extends React.Component {
   constructor() {
@@ -29,7 +30,7 @@ export default withRouter(class Projects extends React.Component {
   }
 
   componentWillUnmount() {
-    this.cancelToken.cancel('Request cancel by unmount');
+    this.cancelToken.cancel('Request cancelled due to unmount');
   }
 
   updateSearchValue(event) {
@@ -55,12 +56,10 @@ export default withRouter(class Projects extends React.Component {
     return (
       <PageTransitionGroup component="div">
         <h1>All projects</h1>
-        <input type="search" placeholder="Search for project"
-               value={this.state.searchValue}
-               onChange={this.updateSearchValue.bind(this)}/>
-               <div className="row">
-                 {projects}
-               </div>
+        <SearchField searchValue={this.state.searchValue} search={this.updateSearchValue.bind(this)}/>
+        <div className="row">
+          {projects}
+        </div>
       </PageTransitionGroup>
     );
   }

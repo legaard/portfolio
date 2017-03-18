@@ -1,17 +1,16 @@
 $breakpoint-small: 575px;
-$size-logo-small: $size-header-height * 1.1;
-$size-header-item-padding: 10px;
+$size-logo-small: $size-header-height * 0.85;
+$size-header-item-padding: 20px;
 $size-menu-item: 50px;
 $size-min-content-width: 320px;
 
 @media screen and (max-width: $breakpoint-small) {
   header {
-    background: $color-black;
+    background-color: $color-black;
     height: $size-logo-small;
 
     #logo {
       margin-left: $size-header-item-padding;
-      content: url('/data/img/logo-mobile.svg');
       height: $size-logo-small;
     }
 
@@ -29,16 +28,12 @@ $size-min-content-width: 320px;
       color: $color-white;
       float: right;
       height: 100%;
-
-      &:hover {
-        color: $color-action;
-      }
     }
   }
 
   nav {
     width: 100%;
-    background: $color-black;
+    background-color: $color-black;
 
     &.hide {
       visibility: hidden;
@@ -59,8 +54,12 @@ $size-min-content-width: 320px;
       width: inherit;
       color: $color-white;
 
+      &:hover {
+        color: $color-white;
+      }
+
       &.active {
-        background: $color-action;
+        background-color: $color-action;
         color: $color-black;
 
         &:hover {
@@ -72,5 +71,13 @@ $size-min-content-width: 320px;
 
   main {
     margin: $size-logo-small + 20px auto 0 auto;
+  }
+
+  .project-cover .image-container img {
+    filter: grayscale(0);
+  }
+
+  footer #social-media .fa:hover {
+    color: $color-white;
   }
 }

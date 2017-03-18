@@ -6,7 +6,7 @@ module.exports = {
     filename: 'app.min.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?$/,
         exclude: /node_module/,
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'postcss' ,'sass']
+        use: ['style-loader', 'css-loader', 'postcss-loader' ,'sass-loader']
       }
     ]
   }

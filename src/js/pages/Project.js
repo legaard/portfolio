@@ -51,7 +51,7 @@ export default class Project extends React.Component {
 
     return (
       <PageTransitionGroup component="section">
-        <h2>{this.state.project.name}</h2>
+        <h1>{this.state.project.name}</h1>
         <section>{this.state.description}</section>
       </PageTransitionGroup>
     );

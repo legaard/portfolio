@@ -18,7 +18,7 @@ export default class Layout extends React.Component {
       this.setState({
         isLoading: false
       });
-    }, 0);
+    }, 2750);
   }
 
   render () {
