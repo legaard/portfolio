@@ -20,7 +20,7 @@ export default withRouter(class Projects extends React.Component {
     // Fetch project data and set/update state
     this.cancelToken = axios.CancelToken.source();
 
-    axios.get('/data/projects.json', {
+    axios.get('/assets/projects.json', {
       cancelToken: this.cancelToken.token
     })
     .then(((response) => {

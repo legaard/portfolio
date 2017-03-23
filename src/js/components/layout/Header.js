@@ -17,7 +17,7 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="container">
-          <img id="logo" src="/data/img/logo.svg" alt="logo"/>
+          <img id="logo" src="/assets/img/logo.svg" alt="logo"/>
           <i onClick={this.showOrHideMenu.bind(this)}
              className={"fa " + (this.state.show ? 'fa-times' : 'fa-bars')}
              aria-hidden="true"></i>

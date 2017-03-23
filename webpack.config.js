@@ -1,12 +1,21 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
+const isProd = process.argv[2] === '-p';
+const styleProd = ExtractTextPlugin.extract({
+  fallback: 'style-loader',
+  use: ['css-loader', 'postcss-loader' ,'sass-loader']
+});
+const styleDev = ['style-loader', 'css-loader', 'postcss-loader' ,'sass-loader'];
+const style = isProd ? styleProd : styleDev;
+
 module.exports = {
-  context: path.join(__dirname, '/src'),
-  entry: './js/app.js',
+  entry: path.join(__dirname, 'src/js/app.js'),
   output: {
-    path: __dirname + '/src/',
-    filename: 'app.min.js'
+    path: path.join(__dirname, 'build'),
+    filename: 'app.min.[hash:8].js',
   },
   module: {
     rules: [
@@ -20,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader' ,'sass-loader']
+        use: style
       }
     ]
   },
@@ -38,6 +47,14 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
+    }),
+    new HtmlWebpackPlugin({
+      filename: path.join('index.html'),
+      template: path.join(__dirname, 'src/index.html')
+    }),
+    new ExtractTextPlugin({
+      filename: 'styles.min.[hash:8].css',
+      disable: !isProd
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()

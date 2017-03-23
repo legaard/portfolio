@@ -1,4 +1,4 @@
 /node_modules
-/src/app.min.js
+/build
 *.log
 .DS_Store

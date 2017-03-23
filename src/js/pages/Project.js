@@ -17,8 +17,8 @@ export default class Project extends React.Component {
     this.cancelToken = axios.CancelToken.source();
 
     axios.all([
-      axios.get('/data/text/' + this.props.params.id + '.txt'),
-      axios.get('data/projects.json')
+      axios.get('/assets/text/' + this.props.params.id + '.txt'),
+      axios.get('/assets/projects.json')
     ], {
       cancelToken: this.cancelToken.token
     })
