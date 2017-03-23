@@ -4,8 +4,8 @@
   "description": "Personal portfolio for Lasse Legaard",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --optimize-minimize",
-    "start": "webpack-dev-server --content-base src --port 8088 --open --inline --hot --host 0.0.0.0"
+    "prod": "webpack --progress -p",
+    "start": "webpack-dev-server"
   },
   "author": "Lasse Legaard",
   "license": "ISC",

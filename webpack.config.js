@@ -1,5 +1,8 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
-  context: __dirname + '/src',
+  context: path.join(__dirname, '/src'),
   entry: './js/app.js',
   output: {
     path: __dirname + '/src/',
@@ -20,5 +23,23 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader' ,'sass-loader']
       }
     ]
-  }
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+    compress: true,
+    open: true,
+    port: 8088,
+    host: '0.0.0.0',
+    hot: true,
+    stats: "errors-only"
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  ]
 };
