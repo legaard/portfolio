@@ -5,80 +5,37 @@
     "client": "Bravida Denmark",
     "year": 2016,
     "contributors": [
-      "Christian Lorentzen"
-    ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": [
       {
-        "name": "git",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "YouTube",
-        "url": "http://www.youtube.com"
+        "name": "Christian Lorentzen",
+        "contact": null
       }
-    ]
-  },
-  {
-    "id": "bravida-android-app2",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "year": 2016,
-    "contributors": [
-      "Christian Lorentzen"
     ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": [
+    "images": [
       {
-        "name": "git",
-        "url": "http://www.google.dk"
+        "src": "assets/img/bravida-app/test.png",
+        "caption": "Awesome caption"
       },
       {
-        "name": "YouTube",
-        "url": "http://www.youtube.com"
+        "src": "assets/img/bravida-app/test2.png",
+        "caption": "Awesome caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test3.gif",
+        "caption": "Awesome caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test4.jpg",
+        "caption": "Awesome caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test5.jpg",
+        "caption": "Awesome caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test6.png",
+        "caption": "Awesome caption"
       }
-    ]
-  },
-  {
-    "id": "bravida-android-app3",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "year": 2016,
-    "contributors": [
-      "Christian Lorentzen"
     ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
     "technologies": [
       "Android",
       "NodeJS",
@@ -92,113 +49,11 @@
     ],
     "links": [
       {
-        "name": "git",
+        "name": "Google",
         "url": "http://www.google.dk"
       },
       {
-        "name": "YouTube",
-        "url": "http://www.youtube.com"
-      }
-    ]
-  },
-  {
-    "id": "bravida-android-app4",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "year": 2016,
-    "contributors": [
-      "Christian Lorentzen"
-    ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": [
-      {
-        "name": "git",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "YouTube",
-        "url": "http://www.youtube.com"
-      }
-    ]
-  },
-  {
-    "id": "bravida-android-app5",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "year": 2016,
-    "contributors": [
-      "Christian Lorentzen"
-    ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": [
-      {
-        "name": "git",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "YouTube",
-        "url": "http://www.youtube.com"
-      }
-    ]
-  },
-  {
-    "id": "bravida-android-app6",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
-    "year": 2016,
-    "contributors": [
-      "Christian Lorentzen"
-    ],
-    "images": {
-      "cover": "assets/img/bravida-app/test.png",
-      "process": []
-    },
-    "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
-    ],
-    "skills": [
-      "Design",
-      "Programming",
-      "Planning"
-    ],
-    "links": [
-      {
-        "name": "git",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "YouTube",
+        "name": "Video",
         "url": "http://www.youtube.com"
       }
     ]

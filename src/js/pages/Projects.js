@@ -49,12 +49,16 @@ export default withRouter(class Projects extends React.Component {
         return isInName || isInClient;
       })
     .map((project) => {
-        return <ProjectCover project={project} key={project.id}
-                             onClick={(() => {this.props.router.push('projects/' + project.id)}).bind(this)}/>
+        return (
+          <div key={project.id} className="col-md-6 col-lg-4 col-xl-3">
+            <ProjectCover project={project}
+                          onClick={(() => {this.props.router.push('projects/' + project.id)}).bind(this)}/>
+          </div>
+        );
       });
 
     return (
-      <PageTransitionGroup component="div">
+      <PageTransitionGroup component="section">
         <h1>All projects</h1>
         <SearchField searchValue={this.state.searchValue} search={this.updateSearchValue.bind(this)}/>
         <div className="row">

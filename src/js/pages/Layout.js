@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoading: true
+      isLoading: false
     }
   }
 

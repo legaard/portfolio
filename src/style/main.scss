@@ -48,6 +48,11 @@ h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -148,6 +153,46 @@ main {
     bottom: 0;
     left: 0;
     z-index: $z-index-high;
+  }
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    flex-grow: 1;
+    width: 50%;
+    padding: 0 7.5px 15px 7.5px;
+
+    &:first-child {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.project-description {
+  margin-bottom: 20px;
+
+  p {
+    margin: 0 0 12px 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    outline: none;
+
+    &:hover {
+      color: $color-action;
+      transition: color 0.2s ease;
+    }
   }
 }
 
