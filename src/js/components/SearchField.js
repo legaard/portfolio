@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 
-
 export default class SearchField extends React.Component {
   constructor(props) {
     super(props);

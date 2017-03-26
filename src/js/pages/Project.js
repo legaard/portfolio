@@ -4,11 +4,13 @@ import axios from 'axios';
 import NotFound from './NotFound';
 import PageTransitionGroup from '../components/PageTransitionGroup';
 import ImageGallery from '../components/ImageGallery';
+import Loading from '../components/Loading';
 
 export default class Project extends React.Component {
   constructor() {
     super();
     this.state = {
+      isLoading: true,
       project: undefined,
       description: ''
     };
@@ -36,6 +38,7 @@ export default class Project extends React.Component {
       })
     }).bind(this))
     .catch(((err) => {
+      console.error(err);
       this.setState({
         project: null
       })
@@ -46,9 +49,20 @@ export default class Project extends React.Component {
     this.cancelToken.cancel('Request cancelled due to unmount');
   }
 
+  onFinishLoading() {
+    this.setState({
+      isLoading: false
+    });
+  }
+
   render () {
-    //If no project were found
-    if(this.state.project == null) return <NotFound />;
+    //If projects has not loaded yet
+    if(this.state.project === undefined || this.state.isLoading) {
+      return <Loading maxLoadingTime={500} onFinish={this.onFinishLoading.bind(this)}/>;
+    }
+
+    //If the project could not be found
+    if(this.state.project === null) return <NotFound />;
 
     let technologies = this.state.project.technologies.map((technology, index, arr) => {
       return (

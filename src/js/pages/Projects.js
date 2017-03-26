@@ -6,12 +6,14 @@ import NotFound from './NotFound';
 import ProjectCover from '../components/ProjectCover';
 import PageTransitionGroup from '../components/PageTransitionGroup';
 import SearchField from '../components/SearchField';
+import Loading from '../components/Loading';
 
 export default withRouter(class Projects extends React.Component {
   constructor() {
     super();
     this.state = {
-      projects: [],
+      isLoading: true,
+      projects: undefined,
       searchValue: ''
     };
   }
@@ -26,7 +28,12 @@ export default withRouter(class Projects extends React.Component {
     .then(((response) => {
       this.setState({ projects: response.data });
     }).bind(this))
-    .catch((err) => { console.error(err); });
+    .catch(((err) => {
+      console.error(err);
+      this.setState({
+        projects: null
+      })
+    }).bind(this));
   }
 
   componentWillUnmount() {
@@ -37,11 +44,25 @@ export default withRouter(class Projects extends React.Component {
     this.setState({ searchValue: event.target.value.substr(0, 15) });
   }
 
-  render() {
-    // If a project has been selected --> render project instead
-    if (this.props.children) return this.props.children;
+  onFinishLoading() {
+    this.setState({
+      isLoading: false
+    })
+  }
 
-    // Filter projects based on client or name
+  render() {
+    //If a project has been selected --> render project instead
+    if(this.props.children) return this.props.children;
+
+    //If request have not been received or is still "loading" --> show loader
+    if(this.state.projects === undefined || this.state.isLoading) {
+      return <Loading maxLoadingTime={1500} onFinish={this.onFinishLoading.bind(this)}/>;
+    }
+
+    //If the projects failed to load
+    if(this.state.projects === null) return <NotFound />;
+
+    //Filter projects based on client or name
     let projects = this.state.projects
     .filter((project) => {
         const isInName = project.name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;

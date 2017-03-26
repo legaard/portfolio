@@ -38,7 +38,6 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-images": "^0.5.2",
-    "react-loading": "^0.0.9",
     "react-router": "^2.8.1"
   },
   "devDependencies": {

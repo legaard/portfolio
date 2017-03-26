@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Lightbox from 'react-images';
 
 export default class ImageGallery extends React.Component {
@@ -60,7 +60,6 @@ export default class ImageGallery extends React.Component {
           onClickThumbnail={this.thumbnailClick.bind(this)}
           currentImage={this.state.currentImage}
           isOpen={this.state.isOpen}
-          backdropClosesModal={true}
           onClickPrev={this.prevImage.bind(this)}
           onClickNext={this.nextImage.bind(this)}
           onClose={this.onClose.bind(this)}/>

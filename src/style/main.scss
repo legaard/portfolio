@@ -225,17 +225,6 @@ input {
   }
 }
 
-#loading {
-  margin: 40vh auto;
-  width: 110px;
-  height: 110px;
-
-  svg {
-    height: 110px;
-    width: 110px;
-  }
-}
-
 footer {
   position: fixed;
   left: 0;
@@ -278,4 +267,5 @@ footer {
   }
 }
 
+@import 'loading';
 @import 'mobile';
