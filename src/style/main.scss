@@ -34,6 +34,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+//General styles
 h1 {
   font-weight: normal;
   font: 1.6em $font-oswald;
@@ -51,6 +52,53 @@ h2 {
 h3 {
   font-weight: normal;
   font-size: 1.2em;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+.button {
+  background: $color-black;
+  color: $color-white;
+  font-family: $font-oswald;
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+  font-size: 1em;
+
+  &:hover {
+    color: $color-action;
+    transition: color 0.4s ease;
+    cursor: pointer;
+  }
+
+  &.busy {
+    opacity: 0.5;
+
+    &:hover {
+      color: $color-white;
+      cursor: default;
+    }
+  }
+}
+
+input {
+  height: 40px;
+  width: 100%;
+  color: $color-black;
+  font-family: inherit;
+  padding: 0 5px;
+  margin-top: 3px;
+  font-size: 0.85em;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
+
+  &:invalid {
+    box-shadow: none;
+  }
 }
 
 header {
@@ -93,10 +141,6 @@ nav {
     &.active {
       background-color: $color-black;
       color: $color-white;
-
-      &:hover {
-        color: $color-white;
-      }
     }
 
     &:hover {
@@ -180,10 +224,6 @@ main {
 .project-description {
   margin-bottom: 20px;
 
-  p {
-    margin: 0 0 12px 0;
-  }
-
   a {
     color: inherit;
     text-decoration: underline;
@@ -196,32 +236,54 @@ main {
   }
 }
 
-input {
-  height: 40px;
-  padding: 5px;
-  color: $color-black;
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  outline: none;
+#contact-form {
+  margin-top: 10px;
+
+  label {
+    display: block;
+    width: 100%;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  input[type=submit] {
+    margin-top: 15px;
+  }
+
+  textarea {
+    resize: none;
+    height: 125px;
+    font-family: inherit;
+    font-size: 0.85em;
+    width: 100%;
+    padding: 10px 5px;
+    max-width: 100%;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    outline: none;
+
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+
+  div:last-child {
+    text-align: center;
+  }
 }
 
 #search-field {
-  display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   .fa-search {
     font-size: 1.5em;
-    color: $color-black;
-    text-align: center;
-    line-height: 1.5em;
-    cursor: pointer;
-    flex-basis: 35px;
   }
 
-  input[type=search] {
-    box-sizing: padding-box;
-    flex-grow: 1;
+  label {
+    cursor: pointer;
   }
 }
 

@@ -7,8 +7,8 @@
     "start": "webpack-dev-server",
     "dev": "npm start",
     "prod": "npm run clean && npm run copy-assets && webpack -p --progress",
-    "clean": "rm -rf build/ && mkdir build",
-    "copy-assets": "cp -R src/assets build/assets"
+    "clean": "rm -rf build/ && mkdir -p build/api",
+    "copy-assets": "cp -R src/assets build/assets && cp src/send_email.php build/api/send_email.php"
   },
   "author": "Lasse Legaard",
   "license": "ISC",

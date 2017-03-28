@@ -73,6 +73,10 @@ $size-min-content-width: 320px;
     margin: $size-logo-small + 20px auto 0 auto;
   }
 
+  .button:hover {
+    color: $color-white;
+  }
+
   .project-cover .image-container img {
     filter: grayscale(0);
   }

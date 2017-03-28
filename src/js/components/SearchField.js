@@ -11,12 +11,16 @@ export default class SearchField extends React.Component {
 
   render() {
     return (
-      <div id="search-field">
-        <i className="fa fa-search" onClick={this.setFocus.bind(this)}></i>
-        <input id="search" type="search" placeholder="Seach for project"
-               ref={(input) => { this.searchInput = input; }}
-               value={this.props.searchValue}
-               onChange={this.props.search}/>
+      <div id="search-field" className="row">
+        <div className="col-sm-12">
+          <label onClick={this.setFocus.bind(this)}>
+            <i className="fa fa-search"></i> Search
+          </label>
+          <input type="search" placeholder="Seach for projects"
+                 ref={(input) => {this.searchInput = input;}}
+                 value={this.props.searchValue}
+                 onChange={this.props.search}/>
+        </div>
       </div>
     );
   }
