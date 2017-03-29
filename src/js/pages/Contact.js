@@ -77,11 +77,7 @@ export default class Contact extends React.Component {
         <h1>Contact</h1>
         <div className="row">
           <p className="col-lg-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque tempus, magna quis bibendum ultrices, lorem sapien elementum erat,
-            eget eleifend lacus enim ac diam. Suspendisse tincidunt risus nisl,
-            bibendum placerat nibh ultrices tincidunt. Maecenas pellentesque efficitur
-            nisl quis viverra. Praesent eleifend risus vitae nibh pretium finibus.
+            Sit tight – I am working on the site and real content will be available soon!
           </p>
         </div>
         <form className="row" id="contact-form" onSubmit={this.onSubmit.bind(this)}>

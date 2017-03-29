@@ -1,8 +1,8 @@
 [
   {
-    "id": "bravida-android-app",
-    "name": "A Smartphone Application for Energy Optimization",
-    "client": "Bravida Denmark",
+    "id": "test1",
+    "name": "A Simple Test Project – Still Working on the Site",
+    "client": "Lorem Ipsum",
     "year": 2016,
     "contributors": [
       {
@@ -13,27 +13,243 @@
     "images": [
       {
         "src": "assets/img/bravida-app/test.png",
-        "caption": "Awesome caption"
+        "caption": "Lorem ipsum caption"
       },
       {
         "src": "assets/img/bravida-app/test2.png",
-        "caption": "Awesome caption"
+        "caption": "Lorem ipsum caption"
       },
       {
         "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Awesome caption"
+        "caption": "Lorem ipsum caption"
       },
       {
-        "src": "assets/img/bravida-app/test4.jpg",
-        "caption": "Awesome caption"
+        "src": "assets/img/bravida-app/test4.png",
+        "caption": "Lorem ipsum caption"
       },
       {
         "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Awesome caption"
+        "caption": "Lorem ipsum caption"
+      }
+    ],
+    "technologies": [
+      "Android",
+      "NodeJS",
+      "Express",
+      "Illustrator"
+    ],
+    "skills": [
+      "Design",
+      "Programming",
+      "Planning"
+    ],
+    "links": [
+      {
+        "name": "Google",
+        "url": "http://www.google.dk"
       },
       {
-        "src": "assets/img/bravida-app/test6.png",
-        "caption": "Awesome caption"
+        "name": "Video",
+        "url": "http://www.youtube.com"
+      }
+    ]
+  },
+  {
+    "id": "test2",
+    "name": "A Simple Test Project – Still Working on the Site",
+    "client": "Lorem Ipsum",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Lorentzen",
+        "contact": null
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/bravida-app/test.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test2.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test3.gif",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test4.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test5.jpg",
+        "caption": "Lorem ipsum caption"
+      }
+    ],
+    "technologies": [
+      "Android",
+      "NodeJS",
+      "Express",
+      "Illustrator"
+    ],
+    "skills": [
+      "Design",
+      "Programming",
+      "Planning"
+    ],
+    "links": [
+      {
+        "name": "Google",
+        "url": "http://www.google.dk"
+      },
+      {
+        "name": "Video",
+        "url": "http://www.youtube.com"
+      }
+    ]
+  },
+  {
+    "id": "test3",
+    "name": "A Simple Test Project – Still Working on the Site",
+    "client": "Lorem Ipsum",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Lorentzen",
+        "contact": null
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/bravida-app/test.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test2.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test3.gif",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test4.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test5.jpg",
+        "caption": "Lorem ipsum caption"
+      }
+    ],
+    "technologies": [
+      "Android",
+      "NodeJS",
+      "Express",
+      "Illustrator"
+    ],
+    "skills": [
+      "Design",
+      "Programming",
+      "Planning"
+    ],
+    "links": [
+      {
+        "name": "Google",
+        "url": "http://www.google.dk"
+      },
+      {
+        "name": "Video",
+        "url": "http://www.youtube.com"
+      }
+    ]
+  },
+  {
+    "id": "test4",
+    "name": "A Simple Test Project – Still Working on the Site",
+    "client": "Lorem Ipsum",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Lorentzen",
+        "contact": null
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/bravida-app/test.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test2.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test3.gif",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test4.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test5.jpg",
+        "caption": "Lorem ipsum caption"
+      }
+    ],
+    "technologies": [
+      "Android",
+      "NodeJS",
+      "Express",
+      "Illustrator"
+    ],
+    "skills": [
+      "Design",
+      "Programming",
+      "Planning"
+    ],
+    "links": [
+      {
+        "name": "Google",
+        "url": "http://www.google.dk"
+      },
+      {
+        "name": "Video",
+        "url": "http://www.youtube.com"
+      }
+    ]
+  },
+  {
+    "id": "test5",
+    "name": "A Simple Test Project – Still Working on the Site",
+    "client": "Lorem Ipsum",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Lorentzen",
+        "contact": null
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/bravida-app/test.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test2.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test3.gif",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test4.png",
+        "caption": "Lorem ipsum caption"
+      },
+      {
+        "src": "assets/img/bravida-app/test5.jpg",
+        "caption": "Lorem ipsum caption"
       }
     ],
     "technologies": [
