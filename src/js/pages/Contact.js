@@ -39,7 +39,11 @@ export default class Contact extends React.Component {
       submitButtonValue: 'sending...'
     });
 
-    axios.post('/api/send_email.php', this.state)
+    //create data object (without the isSending value)
+    let data = Object.assign({}, this.state);
+    delete data.isSending;
+
+    axios.post('/api/send_email.php', data)
     .then((res) => {
       if(res.status === 200) {
         sessionStorage.removeItem(this.STORAGE_CONTACT_KEY);
