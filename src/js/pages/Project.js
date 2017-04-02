@@ -88,13 +88,16 @@ export default class Project extends React.Component {
     return (
       <PageTransitionGroup component="section">
         <h1>{this.state.project.name}</h1>
-        <h3><i>Client: {this.state.project.client}, {this.state.project.year}</i></h3>
+        <h3>Client: {this.state.project.client}, {this.state.project.year}</h3>
         <div className="row">
           <div className="project-description col-lg-8 col-md-6 col-sm-12">
             <p>{this.state.description}</p>
-            <p><i>Technologies</i><br/>{technologies}</p>
-            <p><i>Skills</i><br/>{skills}</p>
-            <p><i>Links</i><br/>{links}</p>
+            <h4>Technologies</h4>
+            <p>{technologies}</p>
+            <h4>Skills</h4>
+            <p>{skills}</p>
+            <h4>Links</h4>
+            <p>{links}</p>
           </div>
           <div className="project-images col-lg-4 col-md-6 col-sm-12">
             <ImageGallery images={this.state.project.images}/>

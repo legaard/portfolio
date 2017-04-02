@@ -7,10 +7,10 @@ export default class Contact extends React.Component {
   constructor() {
     super();
 
-    this.STORAGE_CONTACT_KEY = "CONTACT_DATA";
-    let sessionData = JSON.parse(sessionStorage.getItem(this.STORAGE_CONTACT_KEY));
+    this.STORAGE_KEY_CONTACT = "CONTACT_DATA";
+    let sessionData = JSON.parse(sessionStorage.getItem(this.STORAGE_KEY_CONTACT));
 
-    if(sessionData) {
+    if(sessionData !== null) {
       this.state = {
         name: sessionData.name,
         email: sessionData.email,
@@ -35,8 +35,7 @@ export default class Contact extends React.Component {
     if (this.state.isSending) return;
 
     this.setState({
-      isSending: true,
-      submitButtonValue: 'sending...'
+      isSending: true
     });
 
     //create data object (without the isSending value)
@@ -46,7 +45,7 @@ export default class Contact extends React.Component {
     axios.post('/api/send_email.php', data)
     .then((res) => {
       if(res.status === 200) {
-        sessionStorage.removeItem(this.STORAGE_CONTACT_KEY);
+        sessionStorage.removeItem(this.STORAGE_KEY_CONTACT);
 
         this.setState({
           name: '',
@@ -65,7 +64,7 @@ export default class Contact extends React.Component {
   }
 
   componentWillUnmount() {
-    sessionStorage.setItem(this.STORAGE_CONTACT_KEY, JSON.stringify(this.state));
+    sessionStorage.setItem(this.STORAGE_KEY_CONTACT, JSON.stringify(this.state));
   }
 
   onChange(event) {

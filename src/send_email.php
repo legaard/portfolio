@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_data[$key] = $value;
   }
 
-  $message = wordwrap($email_data['message'], 70, "\r\n") . "\n\nFrom: " . $email_data['email'];
+  $message = "From: " . $email_data['name'] . ", " . $email_data['email'] . "\n\n" . wordwrap($email_data['message'], 70, "\r\n");
   $did_send = mail("legaard.lasse@gmail.com", $email_data['subject'], $message, "From: contact@legaard.xyz");
 
   if(!$did_send) {

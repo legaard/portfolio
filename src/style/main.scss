@@ -22,19 +22,25 @@ $z-index-low: -1;
 
 // Colors
 $color-black: #323232;
-$color-white: #f0f0f0;
-$color-action: #969696;
-$color-background: $color-white;
+$color-semi-white: #f0f0f0;
+$color-white: #fff;
+$color-action: #999999;
+$color-background: $color-semi-white;
 $color-background-clickable: $color-black;
-$color-text-clickable: $color-white;
+$color-text-clickable: $color-semi-white;
 $color-text-headline: $color-black;
 
 /****** STYLING ******/
+html {
+  background: #404040;
+}
+
 body {
   box-sizing: border-box;
   font: 1em $font-stack;
   background-color: $color-background;
   margin: 0;
+  min-height: 100vh;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -44,6 +50,7 @@ h1 {
   font: 1.6em $font-oswald;
   color: $color-text-headline;
   text-transform: uppercase;
+  margin-top: 0;
 }
 
 h2 {
@@ -51,15 +58,26 @@ h2 {
   font: 1.3em $font-oswald;
   color: $color-text-headline;
   text-transform: uppercase;
+  margin-top: 0;
 }
 
 h3 {
   font-weight: normal;
   font-size: 1.2em;
+  font-style: italic;
+  margin-top: 0;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 0;
 }
 
 p {
-  margin: 0 0 12px 0;
+  margin: 0 0 15px 0;
+  line-height: 1.6em;
 }
 
 a {
@@ -110,6 +128,7 @@ input {
   border-radius: 0;
   -webkit-appearance: none;
   outline: none;
+  background: $color-white;
 
   &:invalid {
     box-shadow: none;
@@ -170,14 +189,15 @@ nav {
 }
 
 main {
-  margin: $size-logo + 50px auto 0 auto;
+  padding-top: 50px + $size-logo;
+  padding-bottom: 40px;
 
   ::-moz-selection {
-    color: $color-white;
+    color: $color-semi-white;
     background-color: $color-black;
   }
   ::selection {
-    color: $color-white;
+    color: $color-semi-white;
     background-color: $color-black;
   }
 }
@@ -242,6 +262,33 @@ main {
   margin-bottom: 20px;
 }
 
+.skill-bar {
+  margin-bottom: 10px;
+
+  .bar {
+    height: 25px;
+    width: 100%;
+    background: $color-white;
+  }
+
+  @for $i from 1 through 10 {
+    .level-#{$i} {
+      width: $i * 10%;
+      height: 100%;
+      background: $color-background-clickable;
+
+      &::before {
+        content: '\00a0';
+      }
+
+      &:hover {
+        background: $color-action;
+        transition: background 0.4s ease;
+      }
+    }
+  }
+}
+
 #contact-form {
   margin-top: 10px;
 
@@ -259,6 +306,7 @@ main {
   }
 
   textarea {
+    background: $color-white;
     resize: none;
     height: 125px;
     font-family: inherit;

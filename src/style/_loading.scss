@@ -1,18 +1,18 @@
-#loading::before {
-  content: '';
-}
-
 #loading {
-    margin: 45vh auto;
-    width: 30px;
-    height: 30px;
-    background-color: $color-black;
-    animation-name: spin;
-    animation-duration: 1.2s;
-    animation-iteration-count: infinite;
+  margin: 25vh auto 0 auto;
+  width: 30px;
+  height: 30px;
+  background-color: $color-black;
+  animation-name: spin;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+
+    &::before {
+      content: '\00a0';
+    }
 }
 
 @keyframes spin {
-    from { transform: rotate3d(0, 0, 1, 0deg); }
-    to { transform: rotate3d(0, 0, 1, 360deg); }
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to { transform: rotate3d(0, 0, 1, 360deg); }
 }

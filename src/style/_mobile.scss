@@ -70,11 +70,15 @@ $size-min-content-width: 320px;
   }
 
   main {
-    margin: $size-logo-small + 20px auto 0 auto;
+    padding-top: $size-logo-small + 20px;
   }
 
   .button:hover {
     color: $color-white;
+  }
+
+  #profile-image {
+    width: 100%;
   }
 
   footer #social-media .fa:hover {
