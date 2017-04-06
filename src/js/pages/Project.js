@@ -91,6 +91,7 @@ export default class Project extends React.Component {
         <h3>Client: {this.state.project.client}, {this.state.project.year}</h3>
         <div className="row">
           <div className="project-description col-lg-8 col-md-6 col-sm-12">
+            <p>I am still working on the site – real project descriptions will be availble soon!</p>
             <p>{this.state.description}</p>
             <h4>Technologies</h4>
             <p>{technologies}</p>

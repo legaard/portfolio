@@ -65,18 +65,22 @@ export default withRouter(class Projects extends React.Component {
     //Filter projects based on client or name
     let projects = this.state.projects
     .filter((project) => {
-        const isInName = project.name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;
-        const isInClient = project.client.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;
-        return isInName || isInClient;
-      })
+      const isInName = project.name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;
+      const isInClient = project.client.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1;
+      return isInName || isInClient;
+    })
+    .sort((projectOne, projectTwo) => {
+      return projectTwo.year - projectOne.year;
+
+    })
     .map((project) => {
-        return (
-          <div key={project.id} className="col-md-6 col-lg-4 col-xl-3">
-            <ProjectCover project={project}
-                          onClick={(() => {this.props.router.push('projects/' + project.id)}).bind(this)}/>
-          </div>
-        );
-      });
+      return (
+        <div key={project.id} className="col-md-6 col-lg-4">
+          <ProjectCover project={project}
+                        onClick={(() => {this.props.router.push('projects/' + project.id)}).bind(this)}/>
+        </div>
+      );
+    });
 
     return (
       <PageTransitionGroup component="section">

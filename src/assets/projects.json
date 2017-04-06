@@ -1,276 +1,661 @@
 [
   {
-    "id": "test1",
-    "name": "A Simple Test Project – Still Working on the Site",
-    "client": "Lorem Ipsum",
+    "id": "bravida-app",
+    "name": "A Smartphone Application for Energy Optimization",
+    "client": "Bravida Denmark",
     "year": 2016,
     "contributors": [
       {
-        "name": "Christian Lorentzen",
+        "name": "Christian Hannebo Lorentzen",
         "contact": null
+      },
+      {
+        "name": "Jonas Techen",
+        "contact": "https://www.linkedin.com/in/jonastechen/"
       }
     ],
     "images": [
       {
-        "src": "assets/img/bravida-app/test.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/bravida-app/bravida-main-screen.jpg",
+        "caption": "The main screen of the application"
       },
       {
-        "src": "assets/img/bravida-app/test2.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/bravida-app/bravida-ventilation-report.jpg",
+        "caption": "Report displaying the profitability of a ventilation replacement"
       },
       {
-        "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/bravida-app/bravida-report-overview.jpg",
+        "caption": "Detailed overview of all reports created"
       },
       {
-        "src": "assets/img/bravida-app/test4.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/bravida-app/bravida-create-report.jpg",
+        "caption": "Screen used to create a ventilation report"
       },
       {
-        "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/bravida-app/bravida-send-email.jpg",
+        "caption": "From this screen service engineers can send an email containing reports created during an inspection"
+      },
+      {
+        "src": "assets/img/bravida-app/bravida-design-iterations.jpg",
+        "caption": "The first couple of design iterations that the application underwent"
       }
     ],
     "technologies": [
       "Android",
       "NodeJS",
       "Express",
-      "Illustrator"
+      "Adobe Photoshop",
+      "Adobe Illustrator"
     ],
     "skills": [
-      "Design",
+      "UI Design",
       "Programming",
-      "Planning"
+      "User-centered Design",
+      "Project Planning"
     ],
     "links": [
       {
-        "name": "Google",
-        "url": "http://www.google.dk"
+        "name": "App on Google Play store",
+        "url": "https://play.google.com/store/apps/details?id=com.ubit.bravidaapp"
       },
       {
-        "name": "Video",
-        "url": "http://www.youtube.com"
+        "name": "Bravida Denmark",
+        "url": "http://www.bravida.dk/"
       }
     ]
   },
   {
-    "id": "test2",
-    "name": "A Simple Test Project – Still Working on the Site",
-    "client": "Lorem Ipsum",
+    "id": "tue-iot-controller",
+    "name": "Setting the Mood: A Controller for Music and Light",
+    "client": "Eindhoven University of Technology",
     "year": 2016,
     "contributors": [
       {
-        "name": "Christian Lorentzen",
+        "name": "Thijs Roeleven",
+        "contact": null
+      },
+      {
+        "name": "Eléni Economidou",
+        "contact": null
+      },
+      {
+        "name": "Yijun Yu",
         "contact": null
       }
     ],
     "images": [
       {
-        "src": "assets/img/bravida-app/test.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-iot-controller/controller-in-use.jpg",
+        "caption": "The controller in use"
       },
       {
-        "src": "assets/img/bravida-app/test2.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-iot-controller/controller-iteration-3.jpg",
+        "caption": "Final iteration of the music controller – now merged with privacy aspects and light control"
       },
       {
-        "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-iot-controller/controller-iteration-2.jpg",
+        "caption": "Second iteration of the music controller"
       },
       {
-        "src": "assets/img/bravida-app/test4.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-iot-controller/controller-iteration-1.jpg",
+        "caption": "One of many mock-ups from the first iteration"
       },
       {
-        "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-iot-controller/controller-overview.jpg",
+        "caption": "Overview of the functionality that the final concept embodies"
       }
     ],
     "technologies": [
-      "Android",
       "NodeJS",
-      "Express",
-      "Illustrator"
+      "Particle Photon",
+      "Arduino",
+      "Adobe Photoshop",
+      "Adobe Illustrator"
     ],
     "skills": [
-      "Design",
       "Programming",
-      "Planning"
+      "Prototyping",
+      "Physical Design"
     ],
     "links": [
       {
-        "name": "Google",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "Video",
-        "url": "http://www.youtube.com"
+        "name": "Video showcasing the concept",
+        "url": "https://vimeo.com/211517115"
       }
     ]
   },
   {
-    "id": "test3",
-    "name": "A Simple Test Project – Still Working on the Site",
-    "client": "Lorem Ipsum",
+    "id": "tue-ligo",
+    "name": "LIGO: Using Ferrofluid to Provide Remote Connectedness",
+    "client": "Eindhoven University of Technology",
     "year": 2016,
     "contributors": [
       {
-        "name": "Christian Lorentzen",
+        "name": "Stefano Lanzani",
+        "contact": null
+      },
+      {
+        "name": "Max Bogers",
         "contact": null
       }
     ],
     "images": [
       {
-        "src": "assets/img/bravida-app/test.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-ligo/ligo-render.jpg",
+        "caption": "3D render of the envisioned concept"
       },
       {
-        "src": "assets/img/bravida-app/test2.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-ligo/ligo-iteration-1.jpg",
+        "caption": "Simple prototype to convey the idea – consists of wood, vacuum moulded plastic and a magnet with a cloth which is supposed to look like Ferrofluid"
       },
       {
-        "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-ligo/ligo-form-exploration.jpg",
+        "caption": "Exploration of form through foam models"
       },
       {
-        "src": "assets/img/bravida-app/test4.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-ligo/ligo-iteration-2.jpg",
+        "caption": "A laser cut version of the prototype – used to explore various mechanical solutions"
       },
       {
-        "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/tue-ligo/ligo-hardware.jpg",
+        "caption": "Final prototype with all its hardware components; LED-strip, Particle Photon, Arduino, stepper motors, etc."
+      },
+      {
+        "src": "assets/img/tue-ligo/ligo-application.jpg",
+        "caption": "Application developed for the project – it collects accelerometer data and sends it to the LIGO module"
+      },
+      {
+        "src": "assets/img/tue-ligo/ligo-demo-day.jpg",
+        "caption": "Setup from the demo day at TU/e"
       }
     ],
     "technologies": [
       "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
+      "Particle Photon",
+      "Arduino",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "KeyShot"
     ],
     "skills": [
-      "Design",
       "Programming",
-      "Planning"
+      "Prototyping",
+      "Project Planning",
+      "Physical Design",
+      "User-centered Design"
     ],
     "links": [
       {
-        "name": "Google",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "Video",
-        "url": "http://www.youtube.com"
+        "name": "Video of the functional prototype",
+        "url": "https://vimeo.com/196717939"
       }
     ]
   },
   {
-    "id": "test4",
-    "name": "A Simple Test Project – Still Working on the Site",
-    "client": "Lorem Ipsum",
-    "year": 2016,
+    "id": "au-3d-controller",
+    "name": "A Game Controller for \"Joe Danger 2: The Movie\"",
+    "client": "Aarhus University",
+    "year": 2014,
     "contributors": [
       {
-        "name": "Christian Lorentzen",
+        "name": "Jonas Techen",
+        "contact": "https://www.linkedin.com/in/jonastechen/"
+      },
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Bo Penstoft",
         "contact": null
       }
     ],
     "images": [
       {
-        "src": "assets/img/bravida-app/test.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-3d-controller/game-controller-close-up.jpg",
+        "caption": "A close up photo of the final design"
       },
       {
-        "src": "assets/img/bravida-app/test2.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-3d-controller/game-controller-form-exploration.jpg",
+        "caption": "Play dough used to investigate properties for the handles"
       },
       {
-        "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-3d-controller/game-controller-iteration-1.jpg",
+        "caption": "Hardware mounted on a simple foam model – used to explore various interaction patterns and hardware components"
       },
       {
-        "src": "assets/img/bravida-app/test4.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-3d-controller/game-controller-primed-sanded.jpg",
+        "caption": "3D printed model primed and sanded"
       },
       {
-        "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-3d-controller/game-controller-painted.jpg",
+        "caption": "3D printed model painted"
+      },
+      {
+        "src": "assets/img/au-3d-controller/game-controller-hardware.jpg",
+        "caption": "Hardware mounted in the final version of the controller"
+      },
+      {
+        "src": "assets/img/au-3d-controller/game-controller-front-view.jpg",
+        "caption": "Final design seen from the front"
+      },
+      {
+        "src": "assets/img/au-3d-controller/game-controller-back-view.jpg",
+        "caption": "Final design seen from the back"
+      },
+      {
+        "src": "assets/img/au-3d-controller/game-controller-exploded-view.jpg",
+        "caption": "3D rendering of the controller (exploded view)"
       }
     ],
     "technologies": [
       "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
+      "Arduino",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Rhinoceros"
     ],
     "skills": [
-      "Design",
       "Programming",
-      "Planning"
+      "Prototyping",
+      "Project Planning",
+      "3d modeling"
     ],
     "links": [
       {
-        "name": "Google",
-        "url": "http://www.google.dk"
-      },
-      {
-        "name": "Video",
-        "url": "http://www.youtube.com"
+        "name": "Video of the functional prototype",
+        "url": "https://www.youtube.com/watch?v=so9uWmCYtuo"
       }
     ]
   },
   {
-    "id": "test5",
-    "name": "A Simple Test Project – Still Working on the Site",
-    "client": "Lorem Ipsum",
-    "year": 2016,
+    "id": "au-prosopagnosia",
+    "name": "Wearable Technology for People Suffering from Face Blindness",
+    "client": "Aarhus University",
+    "year": 2014,
     "contributors": [
       {
-        "name": "Christian Lorentzen",
+        "name": "Jonas Techen",
+        "contact": "https://www.linkedin.com/in/jonastechen/"
+      },
+      {
+        "name": "Christian Hannesbo Lorentzen",
         "contact": null
+      },
+      {
+        "name": "Tore Kjær",
+        "contact": "https://torekjaer.dk/"
       }
     ],
     "images": [
       {
-        "src": "assets/img/bravida-app/test.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-notification.jpg",
+        "caption": "Person suffering from prosopagnosia receives a notification because a friend or family member is nearby"
       },
       {
-        "src": "assets/img/bravida-app/test2.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-iteration-1.jpg",
+        "caption": "A quick mock-up created to illustrate the concept – one out of three different concepts"
       },
       {
-        "src": "assets/img/bravida-app/test3.gif",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-mockup-watchfaces.jpg",
+        "caption": "Using paper as a way to explore different data representations"
       },
       {
-        "src": "assets/img/bravida-app/test4.png",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-working-prototype.jpg",
+        "caption": "The final prototype – a smartphone and smartwatch application"
       },
       {
-        "src": "assets/img/bravida-app/test5.jpg",
-        "caption": "Lorem ipsum caption"
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-technical-diagram.jpg",
+        "caption": "A simple technical diagram that illustrates how the prototype works"
+      },
+      {
+        "src": "assets/img/au-prosopagnosia/prosopagnosia-poster.jpg",
+        "caption": "Poster created for the demo day at AU"
       }
     ],
     "technologies": [
-      "Android",
-      "NodeJS",
-      "Express",
-      "Illustrator"
+      "Android (Wear)",
+      "Bluetooth Beacons",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign"
     ],
     "skills": [
-      "Design",
       "Programming",
-      "Planning"
+      "UI Design",
+      "Prototyping",
+      "Project Planning"
     ],
     "links": [
       {
-        "name": "Google",
-        "url": "http://www.google.dk"
+        "name": "Video of the functional prototype",
+        "url": "https://www.youtube.com/watch?v=Q1ho0Ucb2Sk"
+      }
+    ]
+  },
+  {
+    "id": "au-uniskema",
+    "name": "A Schedule Generator for Students at Aarhus University",
+    "client": "Spare time project",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Jonas Techen",
+        "contact": "https://www.linkedin.com/in/jonastechen/"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-uniskema/uniskema-front-view.jpg",
+        "caption": "Multiple people view"
       },
       {
-        "name": "Video",
-        "url": "http://www.youtube.com"
+        "src": "assets/img/au-uniskema/uniskema-side-view.jpg",
+        "caption": "Single person view"
+      }
+    ],
+    "technologies": [
+      "AngularJS",
+      "Gulp",
+      "NodeJS",
+      "Browsersync"
+    ],
+    "skills": [
+      "Programming",
+      "UI Design"
+    ],
+    "links": [
+      {
+        "name": "The uniskema.dk website",
+        "url": "http://uniskema.dk"
+      }
+    ]
+  },
+  {
+    "id": "au-consumption-wall",
+    "name": "Urban Intervention: Does Consumption Make us Happy?",
+    "client": "Aarhus University",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Josephine Raun Thomsen",
+        "contact": "https://dk.linkedin.com/in/josephine-raun-thomsen-3b3814a2"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-consumption-wall/consumption-wall-empty.jpg",
+        "caption": "The wall after being \"consumed\" by the passersby"
+      },
+      {
+        "src": "assets/img/au-consumption-wall/consumption-wall-small-scale-version.jpg",
+        "caption": "Small scale version used to act out different outcomes/possibilities for the intervention"
+      },
+      {
+        "src": "assets/img/au-consumption-wall/consumption-wall-candy-question.jpg",
+        "caption": "An example of a question and candy that could be found inside the balloons"
+      },
+      {
+        "src": "assets/img/au-consumption-wall/consumption-wall-homeless-man.jpg",
+        "caption": "Homeless man reading a question from one of the burst balloons"
+      },
+      {
+        "src": "assets/img/au-consumption-wall/consumption-wall-with-balloons.jpg",
+        "caption": "The wall ready to be placed in the context"
+      }
+    ],
+    "technologies": [],
+    "skills": [],
+    "links": [
+      {
+        "name": "Video of the functional prototype",
+        "url": "https://www.youtube.com/watch?v=IAylLXgYv_0&t=110s"
+      }
+    ]
+  },
+  {
+    "id": "au-shape-change",
+    "name": "Exploring Shape Changing Properties in a Domestic Context",
+    "client": "Aarhus University",
+    "year": 2015,
+    "contributors": [
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Josephine Raun Thomsen",
+        "contact": "https://dk.linkedin.com/in/josephine-raun-thomsen-3b3814a2"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-shape-change/au-shape-change-overview.jpg",
+        "caption": "Overview of the three different prototypes"
+      },
+      {
+        "src": "assets/img/au-shape-change/au-shape-change-process.jpg",
+        "caption": "Illustration of the design process"
+      },
+      {
+        "src": "assets/img/au-shape-change/au-shape-change-video-prototype.jpg",
+        "caption": "As part of the process we used video prototypes to evaluate and communicate different ideas"
+      },
+      {
+        "src": "assets/img/au-shape-change/au-shape-change-inner-workings-button.jpg",
+        "caption": "The internal parts of the \"button\" prototype"
+      },
+      {
+        "src": "assets/img/au-shape-change/au-shape-change-research-overview.jpg",
+        "caption": "Research overview"
+      }
+    ],
+    "technologies": [
+      "Arduino",
+      "Various components"
+    ],
+    "skills": [
+      "Research",
+      "UX Design",
+      "Prototyping"
+    ],
+    "links": [
+      {
+        "name": "Published article",
+        "url": "http://dl.acm.org/citation.cfm?id=2856540"
+      },
+      {
+        "name": "Video demonstrating the three prototypes",
+        "url": "https://www.youtube.com/watch?v=y9gobojl8qE"
+      }
+    ]
+  },
+  {
+    "id": "au-explore-bar",
+    "name": "ExploreBAR: Enhancing the Tap Beer Experience",
+    "client": "Aarhus University",
+    "year": 2016,
+    "contributors": [
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Josephine Raun Thomsen",
+        "contact": "https://dk.linkedin.com/in/josephine-raun-thomsen-3b3814a2"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-shandy-zone.jpg",
+        "caption": "The bar at the demo day at AU – shows a shandy beer zone"
+      },
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-small-scale-context.jpg",
+        "caption": "Small scale version of the context (Godsbanen)"
+      },
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-building-process.jpg",
+        "caption": "The process of building the bar"
+      },
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-installing-electronics.jpg",
+        "caption": "Installing electronics"
+      },
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-winter-zone.jpg",
+        "caption": "Testing the Christmas beer zone with light and sound"
+      },
+      {
+        "src": "assets/img/au-explore-bar/explore-bar-scenario.jpg",
+        "caption": "Scenario demonstrating how can be moved around to explore different beers and atmospheres"
+      }
+    ],
+    "technologies": [
+      "Arduino",
+      "Various components"
+    ],
+    "skills": [],
+    "links": [
+      {
+        "name": "Published article",
+        "url": "http://dl.acm.org/citation.cfm?id=2856540"
+      }
+    ]
+  },
+  {
+    "id": "au-inspire",
+    "name": "Inspire: A Tangible Way to Discover Events at Aarhus Festuge",
+    "client": "Aarhus University",
+    "year": 2013,
+    "contributors": [
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Christian Skyum Larsen",
+        "contact": null
+      },
+      {
+        "name": "Tore Kjær",
+        "contact": "https://torekjaer.dk/"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-inspire/inspire-idle-screen.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-build-process-1.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-build-process-2.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-infrared-light.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-tracking-bullseye.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-beamer-camera-setup.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-inspire/inspire-usability-test.jpg",
+        "caption": ""
+      }
+    ],
+    "technologies": [
+      "Arduino",
+      "Processing (Java)",
+      "PHP",
+      "BullsEye"
+    ],
+    "skills": [
+      "User-centered design",
+      "Programming",
+      "Physical Design",
+      "Project Planning"
+    ],
+    "links": [
+      {
+        "name": "Short video demonstration",
+        "url": "https://www.youtube.com/watch?v=UON1vMwm6xY"
+      },
+      {
+        "name": "BullsEye tracking software by CAVI",
+        "url": "http://bullseye.projects.cavi.au.dk/"
+      }
+    ]
+  },
+  {
+    "id": "au-family-game",
+    "name": "Move It: A Family Game Designed to Promote Physical Activity",
+    "client": "Aarhus University",
+    "year": 2013,
+    "contributors": [
+      {
+        "name": "Christian Hannesbo Lorentzen",
+        "contact": null
+      },
+      {
+        "name": "Christian Skyum Larsen",
+        "contact": null
+      },
+      {
+        "name": "Tore Kjær",
+        "contact": "https://torekjaer.dk/"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-family-game/family-game-close-up.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-family-game/family-game-3d-model.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-family-game/family-game-board-sketches.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-family-game/family-game-functional-prototype.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-family-game/family-game-points.jpg",
+        "caption": ""
+      }
+    ],
+    "technologies": [
+      "Arduino"
+    ],
+    "skills": [
+      "Programming",
+      "Physical Design"
+    ],
+    "links": [
+      {
+        "name": "Short video demonstration",
+        "url": "https://www.youtube.com/watch?v=UON1vMwm6xY"
+      },
+      {
+        "name": "BullsEye tracking software by CAVI",
+        "url": "http://bullseye.projects.cavi.au.dk/"
       }
     ]
   }

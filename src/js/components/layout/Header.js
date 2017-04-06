@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-export default class Header extends React.Component {
+export default withRouter(class Header extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -21,7 +21,8 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="container">
-          <img id="logo" src="/assets/img/logo.svg" alt="logo"/>
+          <img onClick={(() => this.props.router.push('/') ).bind(this)}
+               id="logo" src="/assets/img/logo.svg" alt="logo"/>
           <i onClick={ (() => this.setState({show: !this.state.show})).bind(this) }
              className={"fa " + (this.state.show ? 'fa-times' : 'fa-bars')}
              aria-hidden="true"></i>
@@ -37,4 +38,4 @@ export default class Header extends React.Component {
       </header>
     );
   }
-}
+})
