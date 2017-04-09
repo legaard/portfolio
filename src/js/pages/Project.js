@@ -91,8 +91,9 @@ export default class Project extends React.Component {
         <h3>Client: {this.state.project.client}, {this.state.project.year}</h3>
         <div className="row">
           <div className="project-description col-lg-8 col-md-6 col-sm-12">
-            <p>I am still working on the site – real project descriptions will be availble soon!</p>
+            <p>I am still working on the site so just pretend that the following ”lorem ipsum” text is actually a really cool project description.</p>
             <p>{this.state.description}</p>
+            <p>I know... That was a pretty awesome project description!</p>
             <h4>Technologies</h4>
             <p>{technologies}</p>
             <h4>Skills</h4>

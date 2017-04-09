@@ -37,6 +37,9 @@ export default class Footer extends React.Component {
             <a href="https://github.com/legaard" target="_blank">
               <i className="fa fa-github fa-2x" aria-hidden="true"></i>
             </a>
+            <a href="https://bitbucket.com/legaard" target="_blank">
+              <i className="fa fa-bitbucket fa-2x" aria-hidden="true"></i>
+            </a>
             <a href="https://instagram.com/lasselegaard" target="_blank">
               <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
             </a>

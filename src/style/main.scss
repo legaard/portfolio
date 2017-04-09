@@ -94,6 +94,15 @@ a {
   }
 }
 
+.image {
+  opacity: 0;
+  transition: opacity 0.6s;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
 #profile-image {
   width: 100%;
   margin: 20px 0;
@@ -360,7 +369,7 @@ footer {
   #social-media {
     text-align: center;
     width: 45px;
-    height: 200px;
+    height: 235px;
     background-color: $color-background-clickable;
     float: right;
 
@@ -370,7 +379,7 @@ footer {
     }
 
     &.show {
-      transform: translate(0, -200px);
+      transform: translate(0, -235px);
       transition: all 0.4s ease;
 
       .fa-caret-up {

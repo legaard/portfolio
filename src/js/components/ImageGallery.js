@@ -1,6 +1,8 @@
 import React from 'react';
 import Lightbox from 'react-images';
 
+import Image from './Image';
+
 export default class ImageGallery extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +47,7 @@ export default class ImageGallery extends React.Component {
 
     let imageThumbnails = this.props.images.map((image, index) => {
       return (
-        <img key={index} onClick={this.openImage.bind(this, index)}
+        <Image key={index} onClick={this.openImage.bind(this, index)}
              src={image.src} alt={image.caption}
              title="Click to view image"/>
       );

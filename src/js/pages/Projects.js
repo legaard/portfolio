@@ -71,7 +71,6 @@ export default withRouter(class Projects extends React.Component {
     })
     .sort((projectOne, projectTwo) => {
       return projectTwo.year - projectOne.year;
-
     })
     .map((project) => {
       return (

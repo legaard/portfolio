@@ -33,7 +33,7 @@
       },
       {
         "src": "assets/img/bravida-app/bravida-send-email.jpg",
-        "caption": "From this screen service engineers can send an email containing reports created during an inspection"
+        "caption": "From this screen service workers can send emails containing reports created during an inspection"
       },
       {
         "src": "assets/img/bravida-app/bravida-design-iterations.jpg",
@@ -146,7 +146,7 @@
       },
       {
         "src": "assets/img/tue-ligo/ligo-iteration-1.jpg",
-        "caption": "Simple prototype to convey the idea – consists of wood, vacuum moulded plastic and a magnet with a cloth which is supposed to look like Ferrofluid"
+        "caption": "A simple prototype used to convey the concept"
       },
       {
         "src": "assets/img/tue-ligo/ligo-form-exploration.jpg",
@@ -154,11 +154,11 @@
       },
       {
         "src": "assets/img/tue-ligo/ligo-iteration-2.jpg",
-        "caption": "A laser cut version of the prototype – used to explore various mechanical solutions"
+        "caption": "A laser cut version of the prototype – used to explore various mechanical mechanisms"
       },
       {
         "src": "assets/img/tue-ligo/ligo-hardware.jpg",
-        "caption": "Final prototype with all its hardware components; LED-strip, Particle Photon, Arduino, stepper motors, etc."
+        "caption": "Final prototype with all its hardware components (LED-strip, Particle Photon, Arduino, stepper motors, etc.)"
       },
       {
         "src": "assets/img/tue-ligo/ligo-application.jpg",
@@ -218,7 +218,7 @@
       },
       {
         "src": "assets/img/au-3d-controller/game-controller-form-exploration.jpg",
-        "caption": "Play dough used to investigate properties for the handles"
+        "caption": "Play dough used to investigate properties of the handles"
       },
       {
         "src": "assets/img/au-3d-controller/game-controller-iteration-1.jpg",
@@ -250,7 +250,6 @@
       }
     ],
     "technologies": [
-      "Android",
       "Arduino",
       "Adobe Photoshop",
       "Adobe Illustrator",
@@ -260,7 +259,7 @@
       "Programming",
       "Prototyping",
       "Project Planning",
-      "3d modeling"
+      "3D modeling"
     ],
     "links": [
       {
@@ -295,7 +294,7 @@
       },
       {
         "src": "assets/img/au-prosopagnosia/prosopagnosia-iteration-1.jpg",
-        "caption": "A quick mock-up created to illustrate the concept – one out of three different concepts"
+        "caption": "A quick mock-up created to illustrate the concept – one out of three concepts"
       },
       {
         "src": "assets/img/au-prosopagnosia/prosopagnosia-mockup-watchfaces.jpg",
@@ -303,7 +302,7 @@
       },
       {
         "src": "assets/img/au-prosopagnosia/prosopagnosia-working-prototype.jpg",
-        "caption": "The final prototype – a smartphone and smartwatch application"
+        "caption": "The final prototype – consists of a smartphone and smartwatch application"
       },
       {
         "src": "assets/img/au-prosopagnosia/prosopagnosia-technical-diagram.jpg",
@@ -369,6 +368,10 @@
       {
         "name": "The uniskema.dk website",
         "url": "http://uniskema.dk"
+      },
+      {
+        "name": "Code on Bitbucket",
+        "url": "https://bitbucket.org/legaard/au-schedule-generator"
       }
     ]
   },
@@ -413,7 +416,7 @@
     "skills": [],
     "links": [
       {
-        "name": "Video of the functional prototype",
+        "name": "Video of the intervention",
         "url": "https://www.youtube.com/watch?v=IAylLXgYv_0&t=110s"
       }
     ]
@@ -493,7 +496,7 @@
     "images": [
       {
         "src": "assets/img/au-explore-bar/explore-bar-shandy-zone.jpg",
-        "caption": "The bar at the demo day at AU – shows a shandy beer zone"
+        "caption": "The bar in a shandy beer zone at the demo day at AU"
       },
       {
         "src": "assets/img/au-explore-bar/explore-bar-small-scale-context.jpg",
@@ -513,7 +516,7 @@
       },
       {
         "src": "assets/img/au-explore-bar/explore-bar-scenario.jpg",
-        "caption": "Scenario demonstrating how can be moved around to explore different beers and atmospheres"
+        "caption": "Scenario demonstrating how the bar can be moved around to explore different beers and \"atmospheres\""
       }
     ],
     "technologies": [
@@ -521,12 +524,7 @@
       "Various components"
     ],
     "skills": [],
-    "links": [
-      {
-        "name": "Published article",
-        "url": "http://dl.acm.org/citation.cfm?id=2856540"
-      }
-    ]
+    "links": []
   },
   {
     "id": "au-inspire",
@@ -584,7 +582,7 @@
       "BullsEye"
     ],
     "skills": [
-      "User-centered design",
+      "User-centered Design",
       "Programming",
       "Physical Design",
       "Project Planning"
@@ -650,12 +648,8 @@
     ],
     "links": [
       {
-        "name": "Short video demonstration",
+        "name": "Video of the functional prototype",
         "url": "https://www.youtube.com/watch?v=UON1vMwm6xY"
-      },
-      {
-        "name": "BullsEye tracking software by CAVI",
-        "url": "http://bullseye.projects.cavi.au.dk/"
       }
     ]
   }
