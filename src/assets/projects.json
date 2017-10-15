@@ -1,5 +1,74 @@
 [
   {
+    "id": "au-masters-thesis",
+    "name": "Increasing Economic Awareness Using Emergent Displays",
+    "client": "Aarhus University",
+    "year": 2017,
+    "contributors": [
+      {
+        "name": "Christian Hannebo Lorentzen",
+        "contact": null
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-close-up.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-affinity-diagram.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-exploration-kit.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-mockup.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-components.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-test-1.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-test-2.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-setup.jpg",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/au-masters-thesis/masters-thesis-technical-diagram.jpg",
+        "caption": ""
+      }
+    ],
+    "technologies": [
+      "Processing",
+      "Particle Photon",
+      "NodeJS",
+      "Express",
+      "Adobe Photoshop",
+      "Adobe Illustrator"
+    ],
+    "skills": [
+      "UI Design",
+      "Programming",
+      "User-centered Design"
+    ],
+    "links": [
+      {
+        "name": "video",
+        "url": "https://vimeo.com/221686723"
+      }
+    ]
+  },
+  {
     "id": "bravida-app",
     "name": "A Smartphone Application for Energy Optimization",
     "client": "Bravida Denmark",
