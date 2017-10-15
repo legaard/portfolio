@@ -20,7 +20,7 @@ export default class About extends React.Component {
               I hold a BSc degree in IT from Aarhus University (AU) and currently pursuing a MSc degree in IT Product Development from the same university. During my last year as a master student – which is this year – I went abroad to study at the Industrial Design department at Eindhoven University of Technology (TU/e). My stay there broadened my perspective on visual and functional aesthetics and I acquired some new cool design modelling techniques as well.
             </p>
             <p>
-              If you want to learn more about my work experience or academic background feel free to visit my <a href="https://linkedin.com/in/lasselegaard" target="_blank">profile</a> on LinkedIn.
+              If you want to learn more about my work experience or academic background feel free to visit my <a href="https://linkedin.com/in/lasselegaard" target="_blank" rel="noopener">profile</a> on LinkedIn.
             </p>
           </div>
           <div className="col-md-4">

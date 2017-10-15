@@ -79,7 +79,7 @@ export default class Project extends React.Component {
     let links = this.state.project.links.map((link, index, arr) => {
       return (
         <span key={index}>
-          <a href={link.url} target="_blank">{link.name}</a>
+          <a href={link.url} target="_blank" rel="noopener">{link.name}</a>
           {index === arr.length - 1 ? '' : ', '}
         </span>
       );
