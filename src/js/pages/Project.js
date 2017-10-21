@@ -18,6 +18,16 @@ class Project extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    if (!this.state.project && this.props.projects.length > 1) {
+      this.getProjectDescription(this.props.params.id);
+    }
+  }
+
+  componentWillUnmount() {
+    this.cancelToken.cancel('Request for project cancelled due to component unmount');
+  }
+
   getProjectDescription(projectId) {
     this.cancelToken = axios.CancelToken.source();
 
@@ -47,20 +57,16 @@ class Project extends React.Component {
     }).bind(this));
   }
 
-  componentDidUpdate() {
-    if (!this.state.project && this.props.projects.length > 1) {
-      this.getProjectDescription(this.props.params.id);
-    }
-  }
-
-  componentWillUnmount() {
-    this.cancelToken.cancel('Request for project cancelled due to component unmount');
-  }
-
   render () {
     if(this.state.isLoading) return <Loading />;
     
     if(!this.state.project) return <NotFound />;
+
+    let descriptionSections = this.state.description.split('\n').map((section, index) => {
+      return (
+        <p key={index}>{section}</p>
+      )
+    });
 
     let technologies = this.state.project.technologies.map((technology, index, arr) => {
       return (
@@ -98,7 +104,7 @@ class Project extends React.Component {
         <h3>Client: {this.state.project.client}, {this.state.project.year}</h3>
         <div className="row">
           <div className="project-description col-lg-8 col-md-6 col-sm-12">
-            <p>{this.state.description}</p>
+            <div>{descriptionSections}</div>
             <h4>Contributors</h4>
             <p>{contributors}</p>
             <h4>Technologies</h4>
