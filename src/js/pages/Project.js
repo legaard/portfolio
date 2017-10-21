@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import NotFound from './NotFound';
@@ -6,67 +7,73 @@ import PageTransitionGroup from '../components/PageTransitionGroup';
 import ImageGallery from '../components/ImageGallery';
 import Loading from '../components/Loading';
 
-export default class Project extends React.Component {
-  constructor() {
-    super();
+class Project extends React.Component {
+  constructor(props) {
+    super(props);
+
     this.state = {
-      isLoading: true,
       project: undefined,
-      description: ''
+      description: '',
+      isLoading: true
     };
   }
 
-  componentWillMount() {
+  getProjectDescription(projectId) {
     this.cancelToken = axios.CancelToken.source();
 
-    axios.all([
-      axios.get('/assets/text/' + this.props.params.id + '.txt'),
-      axios.get('/assets/projects.json')
-    ], {
+    axios.get('/assets/text/' + projectId + '.txt', {
       cancelToken: this.cancelToken.token
     })
-    .then(axios.spread((description, projects) => {
-      let projectToShow;
-
-      projects.data.forEach((project) => {
-        if(this.props.params.id == project.id) projectToShow = project;
-      })
+    .then(((response) => {
+      let projectDescription = response.data;
+    
+      let projectToRender = this.props.projects.find((project) => {
+        return this.props.params.id === project.id;
+      });
 
       this.setState({
-        project: projectToShow,
-        description: description.data
-      })
+        isLoading: false,
+        project: projectToRender,
+        description: projectDescription
+      });
     }).bind(this))
     .catch(((err) => {
       console.error(err);
+
       this.setState({
-        project: null
-      })
+        isLoading: false,
+        project: undefined
+      });
     }).bind(this));
   }
 
-  componentWillUnmount() {
-    this.cancelToken.cancel('Request cancelled due to unmount');
+  componentDidUpdate() {
+    if (!this.state.project && this.props.projects.length > 1) {
+      this.getProjectDescription(this.props.params.id);
+    }
   }
 
-  onFinishLoading() {
-    this.setState({
-      isLoading: false
-    });
+  componentWillUnmount() {
+    this.cancelToken.cancel('Request for project cancelled due to component unmount');
   }
 
   render () {
-    //If projects has not loaded yet
-    if(this.state.project === undefined || this.state.isLoading) {
-      return <Loading maxLoadingTime={500} onFinish={this.onFinishLoading.bind(this)}/>;
-    }
-
-    //If the project could not be found
-    if(this.state.project === null) return <NotFound />;
+    if(this.state.isLoading) return <Loading />;
+    
+    if(!this.state.project) return <NotFound />;
 
     let technologies = this.state.project.technologies.map((technology, index, arr) => {
       return (
         <span key={index}>{technology + (index === arr.length - 1 ? '' : ', ')}</span>
+      );
+    });
+
+    let contributors = this.state.project.contributors.map((contributor, index, arr) => {
+      return (
+        <span key={index}>
+          <a href={contributor.contact} target="_blank" rel="noopener">{contributor.name}</a>
+          {index === arr.length - 1 ? '' : ', '}
+        </span>
       );
     });
 
@@ -91,9 +98,9 @@ export default class Project extends React.Component {
         <h3>Client: {this.state.project.client}, {this.state.project.year}</h3>
         <div className="row">
           <div className="project-description col-lg-8 col-md-6 col-sm-12">
-            <p>I am still working on the site so just pretend that the following ”lorem ipsum” text is actually a really cool project description.</p>
             <p>{this.state.description}</p>
-            <p>I know... That was a pretty awesome project description!</p>
+            <h4>Contributors</h4>
+            <p>{contributors}</p>
             <h4>Technologies</h4>
             <p>{technologies}</p>
             <h4>Skills</h4>
@@ -109,3 +116,11 @@ export default class Project extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    projects: state.projectsReducer.projects
+  };
+}
+
+export default connect(mapStateToProps)(Project);

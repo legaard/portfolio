@@ -1,77 +1,55 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import PageTransitionGroup from '../components/PageTransitionGroup';
+import * as contactActions from '../actions/contact';
 
-export default class Contact extends React.Component {
-  constructor() {
-    super();
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
 
-    this.STORAGE_KEY_CONTACT = "CONTACT_DATA";
-    let sessionData = JSON.parse(sessionStorage.getItem(this.STORAGE_KEY_CONTACT));
-
-    if(sessionData !== null) {
-      this.state = {
-        name: sessionData.name,
-        email: sessionData.email,
-        subject: sessionData.subject,
-        message: sessionData.message,
-        isSending: false
-      }
-    } else {
-      this.state = {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        isSending: false
-      }
-    }
+    this.inputName = {
+      name: 'name',
+      email: 'email',
+      subject: 'subject',
+      message: 'message'
+    };
   }
 
   onSubmit(event) {
     event.preventDefault();
 
-    if (this.state.isSending) return;
+    if (this.props.isSending) return;
+    
+    const data = {
+      name: this.props.name,
+      email: this.props.email,
+      subject: this.props.subject,
+      message: this.props.message
+    }
 
-    this.setState({
-      isSending: true
-    });
-
-    //create data object (without the isSending value)
-    let data = Object.assign({}, this.state);
-    delete data.isSending;
-
-    axios.post('/api/send_email.php', data)
-    .then((res) => {
-      if(res.status === 200) {
-        sessionStorage.removeItem(this.STORAGE_KEY_CONTACT);
-
-        this.setState({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          isSending: false
-        });
-      }
-    }).catch((err) => {
-      console.log(err);
-      this.setState({
-        isSending: false
-      });
-    });
-  }
-
-  componentWillUnmount() {
-    sessionStorage.setItem(this.STORAGE_KEY_CONTACT, JSON.stringify(this.state));
+    this.props.sendMessage(data); 
   }
 
   onChange(event) {
-    let inputField = event.target.name;
-    let newState = {};
-    newState[inputField] = event.target.value;
-    this.setState(newState);
+    const value = event.target.value;
+    const inputName = event.target.name;
+
+    switch(inputName) {
+      case this.inputName.name:
+        this.props.updateName(value);
+        break;
+      case this.inputName.email:
+        this.props.updateEmail(value);
+        break;
+      case this.inputName.subject:
+        this.props.updateSubject(value);
+        break;
+      case this.inputName.message:
+        this.props.updateMessage(value);
+        break;
+    }
   }
 
   render () {
@@ -86,31 +64,31 @@ export default class Contact extends React.Component {
         <form className="row" id="contact-form" onSubmit={this.onSubmit.bind(this)}>
           <div className="col-md-4">
             <label>Name</label>
-            <input name="name" onChange={this.onChange.bind(this)}
-                   value={this.state.name} type="text" placeholder="Full name"
+            <input name={this.inputName.name} onChange={this.onChange.bind(this)}
+                   value={this.props.name} type="text" placeholder="Full name"
                    required />
           </div>
           <div className="col-md-4">
             <label>Email</label>
-            <input name="email" onChange={this.onChange.bind(this)}
-                   value={this.state.email} type="email" placeholder="Email address"
+            <input name={this.inputName.email} onChange={this.onChange.bind(this)}
+                   value={this.props.email} type="email" placeholder="Email address"
                    required />
           </div>
           <div className="col-md-4">
             <label>Subject</label>
-            <input name="subject" onChange={this.onChange.bind(this)}
-                   value={this.state.subject} type="text" placeholder="Subject"
+            <input name={this.inputName.subject} onChange={this.onChange.bind(this)}
+                   value={this.props.subject} type="text" placeholder="Subject"
                    required />
           </div>
           <div className="col-sm-12">
             <label>Message</label>
-            <textarea name="message" onChange={this.onChange.bind(this)}
-                      value={this.state.message} placeholder="Message"
+            <textarea name={this.inputName.message} onChange={this.onChange.bind(this)}
+                      value={this.props.message} placeholder="Message"
                       required />
           </div>
           <div className="col-sm-12">
-            <input className={(this.state.isSending ? 'busy' : 'ready') + ' button'}
-                   type="submit" value={this.state.isSending ? 'sending...' : 'send'}
+            <input className={(this.props.isSending ? 'busy' : 'ready') + ' button'}
+                   type="submit" value={this.props.isSending ? 'sending...' : 'send'}
                    required />
           </div>
         </form>
@@ -118,3 +96,47 @@ export default class Contact extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { 
+    name: state.contactReducer.senderName,
+    email: state.contactReducer.senderEmail,
+    subject: state.contactReducer.subject,
+    message: state.contactReducer.message,
+    isSending: state.contactReducer.isSending,
+    errorMessage: state.contactReducer.error
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendMessage: (data) => {
+      dispatch(contactActions.send());
+      
+      axios.post('/api/send_email.php', data)
+        .then((response) => {
+          if(response.status === 200) {
+            dispatch(contactActions.clearInput());
+          }
+        })
+        .catch((err) => {
+          console.log(err);          
+          dispatch(contactActions.setError('Failed to send message via contact form'));
+        });
+    },
+    updateName: (name) => {
+      dispatch(contactActions.setSenderName(name));
+    },
+    updateEmail: (email) => {
+      dispatch(contactActions.setSenderEmail(email));
+    },
+    updateSubject: (subject) => {
+      dispatch(contactActions.setSubject(subject));
+    },
+    updateMessage: (message) => {
+      dispatch(contactActions.setMessage(message));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)
