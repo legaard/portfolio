@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import { resetPagePosition } from '../utils/page';
 import PageTransitionGroup from '../components/PageTransitionGroup';
 import * as contactActions from '../actions/contact';
 
@@ -15,6 +16,10 @@ class Contact extends React.Component {
       subject: 'subject',
       message: 'message'
     };
+  }
+
+  componentWillMount() {
+    resetPagePosition();
   }
 
   onSubmit(event) {

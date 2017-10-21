@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import axios from 'axios';
 
+import { resetPagePosition } from '../utils/page';
 import NotFound from './NotFound';
 import ProjectCover from '../components/ProjectCover';
 import PageTransitionGroup from '../components/PageTransitionGroup';
@@ -12,6 +13,8 @@ import * as actions from '../actions/projects';
 
 class Projects extends React.Component {
   componentWillMount() {
+    resetPagePosition();
+    
     if (this.props.projects.length === 0) { 
       setTimeout(this.props.loadProjects, 1750);
     };

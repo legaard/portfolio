@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
+import { resetPagePosition } from '../utils/page';
 import PageTransitionGroup from '../components/PageTransitionGroup';
 
 export default withRouter((props) => {
+  resetPagePosition();
+  
   return (
     <PageTransitionGroup component="section">
       <h1>404 – Not found 😵</h1>

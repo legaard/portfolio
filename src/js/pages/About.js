@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import { resetPagePosition } from '../utils/page'; 
 import PageTransitionGroup from '../components/PageTransitionGroup';
 import SkillBar from '../components/SkillBar';
 import Image from '../components/Image';
 
 export default class About extends React.Component {
+  componentWillMount() {
+    resetPagePosition();
+  }
+
   render () {
     return (
       <PageTransitionGroup component="section">
